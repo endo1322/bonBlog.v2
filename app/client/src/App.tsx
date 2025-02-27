@@ -14,7 +14,6 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const res = await client.index.$get();
-      console.log(res);
       if (res.ok) {
         const data = await res.json();
         setMessage(data.message);
