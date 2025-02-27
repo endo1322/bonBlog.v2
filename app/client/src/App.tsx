@@ -7,16 +7,13 @@ import { createClient } from "../../server/src/index";
 function App() {
   const [message, setMessage] = useState("");
 
-  const client = createClient("http://localhost:8787");
+  const client = createClient(
+    "https://383037e8-server.bondroid3-22.workers.dev/"
+  );
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await client.index.$get({
-        json: {
-          name: "John Doe",
-          age: 30,
-        },
-      });
+      const res = await client.index.$get();
       console.log(res);
       if (res.ok) {
         const data = await res.json();
