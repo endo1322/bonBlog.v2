@@ -8,7 +8,7 @@ function App() {
   const [message, setMessage] = useState("");
 
   const client = createClient(
-    "https://383037e8-server.bondroid3-22.workers.dev/"
+    "https://ef6f0e2f-server.bondroid3-22.workers.dev/"
   );
 
   useEffect(() => {
