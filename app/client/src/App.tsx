@@ -4,12 +4,12 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { createClient } from "../../server/src/index";
 
+const serverUrl = import.meta.env.VITE_SERVER_URL;
+
 function App() {
   const [message, setMessage] = useState("");
 
-  const client = createClient(
-    "https://ef6f0e2f-server.bondroid3-22.workers.dev/"
-  );
+  const client = createClient(serverUrl);
 
   useEffect(() => {
     const fetchData = async () => {

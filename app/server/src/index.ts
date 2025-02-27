@@ -2,10 +2,19 @@ import { Hono } from "hono";
 import { hc } from "hono/client";
 import { cors } from "hono/cors";
 
-const app = new Hono();
+type Bindings = {
+  CLIENT_URL: string;
+};
+
+const app = new Hono<{ Bindings: Bindings }>();
 
 const router = app
-  .use("/", cors({ origin: "http://localhost:5173" }))
+  .use("*", async (c, next) => {
+    const corsMiddlewareHandler = cors({
+      origin: c.env.CLIENT_URL,
+    });
+    return corsMiddlewareHandler(c, next);
+  })
   .get("/", (c) => {
     return c.json({ message: "Hello Hono!" });
   });
