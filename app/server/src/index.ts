@@ -25,8 +25,6 @@ export type AppRouteType = typeof router;
 
 type ClientType = typeof hc<AppRouteType>;
 
-export const createClient = (
-  ...args: Parameters<ClientType>
-): ReturnType<ClientType> => {
+export const createClient = (...args: Parameters<ClientType>): ReturnType<ClientType> => {
   return hc<AppRouteType>(...args);
 };
