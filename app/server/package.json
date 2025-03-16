@@ -8,6 +8,7 @@
     "hono": "^4.7.2"
   },
   "devDependencies": {
+    "@bonblogv2/typescript-config": "workspace:*",
     "@cloudflare/workers-types": "^4.20250214.0",
     "wrangler": "^3.109.2"
   }
