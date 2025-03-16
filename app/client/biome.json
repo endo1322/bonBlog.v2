@@ -1,0 +1,12 @@
+{
+  "extends": ["../../biome.json"],
+  "files": {
+    "ignore": ["dist"]
+  },
+  "linter": {
+    "include": ["src/**"]
+  },
+  "formatter": {
+    "include": ["src/**"]
+  }
+}
