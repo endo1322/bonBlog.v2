@@ -11,6 +11,9 @@ importers:
       turbo:
         specifier: ^2.4.4
         version: 2.4.4
+      typescript:
+        specifier: 5.7.2
+        version: 5.7.2
 
   app/client:
     dependencies:
@@ -48,9 +51,6 @@ importers:
       globals:
         specifier: ^15.15.0
         version: 15.15.0
-      typescript:
-        specifier: ~5.7.2
-        version: 5.7.3
       typescript-eslint:
         specifier: ^8.24.1
         version: 8.25.0(eslint@9.21.0)(typescript@5.7.3)
@@ -70,9 +70,6 @@ importers:
       '@cloudflare/workers-types':
         specifier: ^4.20250214.0
         version: 4.20250224.0
-      typescript:
-        specifier: ~5.7.2
-        version: 5.7.3
       wrangler:
         specifier: ^3.109.2
         version: 3.111.0(@cloudflare/workers-types@4.20250224.0)
@@ -1413,6 +1410,11 @@ packages:
       eslint: ^8.57.0 || ^9.0.0
       typescript: '>=4.8.4 <5.8.0'
 
+  typescript@5.7.2:
+    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   typescript@5.7.3:
     resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
     engines: {node: '>=14.17'}
@@ -2698,6 +2700,8 @@ snapshots:
       typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color
+
+  typescript@5.7.2: {}
 
   typescript@5.7.3: {}
 
