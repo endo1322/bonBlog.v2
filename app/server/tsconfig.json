@@ -3,5 +3,7 @@
   "compilerOptions": {
     "types": ["@cloudflare/workers-types/2023-07-01"],
     "jsxImportSource": "hono/jsx"
-  }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
