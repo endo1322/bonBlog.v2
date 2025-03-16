@@ -16,6 +16,13 @@
     },
     "lint:fix": {
       "cache": false
+    },
+    "test": {
+      "outputs": ["coverage/**"]
+    },
+    "test:watch": {
+      "cache": false,
+      "persistent": true
     }
   }
 }
