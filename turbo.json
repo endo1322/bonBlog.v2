@@ -11,13 +11,10 @@
       "persistent": true,
       "cache": false
     },
-    "lint": {
-      "cache": false
-    },
-    "lint:fix": {
-      "cache": false
-    },
+    "lint": {},
+    "lint:fix": {},
     "test": {
+      "dependsOn": ["lint"],
       "outputs": ["coverage/**"]
     },
     "test:watch": {

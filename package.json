@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "turbo build",
     "test": "turbo run test",
     "test:watch": "vitest --watch"
   },
