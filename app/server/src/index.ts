@@ -16,7 +16,7 @@ const router = app
     });
     return corsMiddlewareHandler(c, next);
   })
-  .get("/", (c) => {
+  .get('/', (c) => {
     return c.json({ message: "Hello Hono!" });
   });
 
