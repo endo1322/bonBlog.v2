@@ -13,6 +13,7 @@ const router = app
     const corsMiddlewareHandler = cors({
       origin: c.env.CLIENT_URL,
     });
+    console.log("client url", c.env.CLIENT_URL);
     return corsMiddlewareHandler(c, next);
   })
   .get("/", (c) => {

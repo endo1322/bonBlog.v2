@@ -13,9 +13,6 @@ jobs:
     name: Build and Test
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    env:
-      VITE_SERVER_URL: http://example.com
-      CLIENT_URL: http://example.com
 
     steps:
       - name: Check out code
@@ -47,3 +44,6 @@ jobs:
  
       - name: Test
         run: pnpm test
+        env:
+          VITE_SERVER_URL: http://example.com
+          CLIENT_URL: http://example.com
