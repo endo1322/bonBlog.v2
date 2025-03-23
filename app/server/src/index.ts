@@ -17,7 +17,7 @@ const router = app
     return corsMiddlewareHandler(c, next);
   })
   .get("/", (c) => {
-    return c.json({ message: "Hello Hono!!" });
+    return c.json({ message: "Hello Hono!" });
   });
 
 export default app;
