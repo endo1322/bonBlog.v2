@@ -1,0 +1,5 @@
+{
+  "name": "@bonblogv2/typescript-config",
+  "private": true,
+  "type": "module"
+}

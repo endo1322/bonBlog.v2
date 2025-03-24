@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "test": "vitest run",
+    "test:watch": "vitest --watch"
+  },
+  "dependencies": {
+    "@cloudflare/vitest-pool-workers": "0.8.0",
+    "hono": "^4.7.2"
+  },
+  "devDependencies": {
+    "@bonblogv2/typescript-config": "workspace:*",
+    "@cloudflare/workers-types": "^4.20250214.0",
+    "cloudflare": "4.1.0",
+    "wrangler": "^3.109.2"
+  }
+}
