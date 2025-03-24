@@ -24,7 +24,7 @@ importers:
         specifier: 3.0.8
         version: 3.0.8(@types/node@20.17.19)(tsx@4.19.3)
 
-  app/client:
+  apps/client:
     dependencies:
       react:
         specifier: ^19.0.0
@@ -67,7 +67,7 @@ importers:
         specifier: ^6.2.0
         version: 6.2.0(@types/node@20.17.19)(tsx@4.19.3)
 
-  app/server:
+  apps/server:
     dependencies:
       '@cloudflare/vitest-pool-workers':
         specifier: 0.8.0
