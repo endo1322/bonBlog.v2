@@ -3,7 +3,7 @@ import { hc } from "hono/client";
 import { cors } from "hono/cors";
 import blogs from "./routes/blogs";
 
-export type Bindings = {
+type Bindings = {
   CLIENT_URL: string;
 };
 
