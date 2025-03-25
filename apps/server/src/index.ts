@@ -3,13 +3,11 @@ import { hc } from "hono/client";
 import { cors } from "hono/cors";
 import blogs from "./routes/blogs";
 
-export type EnvBindings = {
+export type Bindings = {
   CLIENT_URL: string;
-  NOTION_API_KEY: string;
-  NOTION_DATABASE_ID: string;
 };
 
-const app = new Hono<{ Bindings: EnvBindings }>();
+const app = new Hono<{ Bindings: Bindings }>();
 
 const router = app
   .use("*", async (c, next) => {
