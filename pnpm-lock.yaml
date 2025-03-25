@@ -33,6 +33,9 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
     devDependencies:
+      '@bonblogv2/server':
+        specifier: workspace:*
+        version: link:../server
       '@bonblogv2/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config

@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@bonblogv2/typescript-config": "workspace:*",
+    "@bonblogv2/server": "workspace:*",
     "@eslint/js": "^9.21.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
