@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@cloudflare/vitest-pool-workers": "0.8.0",
-    "@notionhq/client": "^2.3.0",
+    "@notionhq/client": "2.3.0",
     "hono": "^4.7.2"
   },
   "devDependencies": {
