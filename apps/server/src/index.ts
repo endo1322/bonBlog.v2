@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import { hc } from "hono/client";
 import { cors } from "hono/cors";
+import blogs from "./routes/blogs";
 
 type Bindings = {
   CLIENT_URL: string;
@@ -18,7 +19,8 @@ const router = app
   })
   .get("/", (c) => {
     return c.json({ message: "Hello Hono!" });
-  });
+  })
+  .route("/blogs", blogs);
 
 export default app;
 
