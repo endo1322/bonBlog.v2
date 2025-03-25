@@ -1,12 +1,15 @@
 import { Hono } from "hono";
 import { hc } from "hono/client";
 import { cors } from "hono/cors";
+import blogs from "./routes/blogs";
 
-type Bindings = {
+export type EnvBindings = {
   CLIENT_URL: string;
+  NOTION_API_KEY: string;
+  NOTION_DATABASE_ID: string;
 };
 
-const app = new Hono<{ Bindings: Bindings }>();
+const app = new Hono<{ Bindings: EnvBindings }>();
 
 const router = app
   .use("*", async (c, next) => {
@@ -18,7 +21,8 @@ const router = app
   })
   .get("/", (c) => {
     return c.json({ message: "Hello Hono!" });
-  });
+  })
+  .route("/blogs", blogs);
 
 export default app;
 
