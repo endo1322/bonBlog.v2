@@ -12,7 +12,7 @@ export const queryBlogDatabase = async (c: Context<NotionEnv>) => {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   return res.results.map((result: any) => ({
     id: result.id,
-    createdAt: result.properties,
+    createdAt: result.created_time,
     updatedAt: result.last_edited_time,
     title: result.properties.title.title[0].plain_text,
     // biome-ignore lint/suspicious/noExplicitAny: <explanation>
