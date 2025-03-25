@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { hc } from "hono/client";
+import { hc, type InferResponseType } from "hono/client";
 import { cors } from "hono/cors";
 import blogs from "./routes/blogs";
 
@@ -28,6 +28,8 @@ export type AppRouteType = typeof router;
 
 type ClientType = typeof hc<AppRouteType>;
 
-export const createClient = (...args: Parameters<ClientType>): ReturnType<ClientType> => {
+export const createHonoClient = (...args: Parameters<ClientType>): ReturnType<ClientType> => {
   return hc<AppRouteType>(...args);
 };
+
+export type InferHonoType<T> = InferResponseType<T>;
