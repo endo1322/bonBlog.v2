@@ -1,8 +1,8 @@
-import rpcClient, { type BogsResponseType } from "@/apis";
+import rpcClient, { type BlogsResponseType } from "@/apis";
 import { useEffect, useState } from "react";
 
 const Blogs = () => {
-  const [blogs, setBlogs] = useState<BogsResponseType>([]);
+  const [blogs, setBlogs] = useState<BlogsResponseType>([]);
 
   useEffect(() => {
     const fetchData = async () => {
