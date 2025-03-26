@@ -3,7 +3,8 @@ import { hc } from "hono/client";
 import { cors } from "hono/cors";
 
 type Bindings = {
-  CLIENT_URL: string;
+  LOCAL_CLIENT_URL: string;
+  CLOUDFLARE_CLIENT_DOMAIN: string;
 };
 
 const app = new Hono<{ Bindings: Bindings }>();
@@ -12,7 +13,9 @@ const router = app
   .use("*", async (c, next) => {
     // TODO: github actionsからの環境変数の取得方法を調査
     const corsMiddlewareHandler = cors({
-      origin: c.env.CLIENT_URL || "",
+      origin: (origin, c) => {
+        return origin.endsWith(c.env.CLOUDFLARE_CLIENT_DOMAIN) ? origin : c.env.LOCAL_CLIENT_URL;
+      },
     });
     return corsMiddlewareHandler(c, next);
   })
