@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import reactLogo from "@/assets/react.svg";
 import viteLogo from "/vite.svg";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-import rpcClient, { type BogsResponseType } from "./apis";
+import "@/App.css";
+import rpcClient from "@/apis";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [blogs, setBlogs] = useState<BogsResponseType>([]);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await rpcClient.blogs.$get();
+      const res = await rpcClient.index.$get();
       if (res.ok) {
         const data = await res.json();
-        setBlogs(data);
+        setMessage(data.message);
       }
     };
 
@@ -31,9 +31,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        {blogs.map((blog) => (
-          <div key={blog.id}>{blog.title}</div>
-        ))}
+        <div>{message}</div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
