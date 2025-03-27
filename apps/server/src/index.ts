@@ -3,16 +3,15 @@ import { hc } from "hono/client";
 import { cors } from "hono/cors";
 
 type Bindings = {
-  CLIENT_URL: string;
+  CLIENT_URLS: string[];
 };
 
 const app = new Hono<{ Bindings: Bindings }>();
 
 const router = app
   .use("*", async (c, next) => {
-    // TODO: github actionsからの環境変数の取得方法を調査
     const corsMiddlewareHandler = cors({
-      origin: c.env.CLIENT_URL || "",
+      origin: c.env.CLIENT_URLS,
     });
     return corsMiddlewareHandler(c, next);
   })

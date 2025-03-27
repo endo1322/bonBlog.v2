@@ -1,7 +1,7 @@
 {
   "name": "server",
   "scripts": {
-    "dev": "wrangler dev",
+    "dev": "wrangler dev --env dev",
     "deploy": "wrangler deploy --minify",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
