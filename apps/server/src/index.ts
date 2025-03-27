@@ -4,15 +4,12 @@ import { cors } from "hono/cors";
 
 type Bindings = {
   CLIENT_URLS: string[];
-  HOGE: "hoge";
 };
 
 const app = new Hono<{ Bindings: Bindings }>();
 
 const router = app
   .use("*", async (c, next) => {
-    console.log("hoge", c.env.HOGE);
-    if (c.env.HOGE !== "hoge") throw new Error("HOGE is not hoge");
     const corsMiddlewareHandler = cors({
       origin: c.env.CLIENT_URLS,
     });
