@@ -11,6 +11,12 @@
       "vars": {
         "CLIENT_URLS": ["http://localhost:4173", "http://localhost:5173"]
       }
+    },
+    "test": {
+      "vars": {
+        "HOGE": "hoge",
+        "CLIENT_URLS": ["http://example.com"]
+      }
     }
   }
   // "kv_namespaces": [

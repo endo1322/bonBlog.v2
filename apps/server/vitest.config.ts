@@ -5,7 +5,7 @@ export default defineWorkersProject(() => {
     test: {
       globals: true,
       poolOptions: {
-        workers: { wrangler: { configPath: './wrangler.jsonc', environment: 'dev' } },
+        workers: { wrangler: { configPath: './wrangler.jsonc', environment: 'test' } },
       },
     },
   }
