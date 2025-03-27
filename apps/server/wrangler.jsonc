@@ -7,13 +7,21 @@
   //   "nodejs_compat"
   // ],
   "env": {
+    "staging": {
+      "vars": {
+        "CF_CLIENT_DOMAIN": "bonblogv2.pages.dev",
+        "CLIENT_URLS": []
+      }
+    },
     "dev": {
       "vars": {
+        "CF_CLIENT_DOMAIN": "",
         "CLIENT_URLS": ["http://localhost:4173", "http://localhost:5173"]
       }
     },
     "test": {
       "vars": {
+        "CF_CLIENT_DOMAIN": "",
         "CLIENT_URLS": ["http://example.com"]
       }
     }
