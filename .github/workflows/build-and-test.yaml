@@ -47,4 +47,4 @@ jobs:
         env:
           VITE_SERVER_URL: http://example.com
           CLIENT_URL: http://example.com
-          HOGE: hoge
+          HOGE: ${{ secrets.HOGE }}
