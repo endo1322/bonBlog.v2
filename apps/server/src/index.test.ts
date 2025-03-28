@@ -1,6 +1,10 @@
 import { env } from "cloudflare:test";
 import app from "./index";
 
+vi.mock("@notionhq/client", () => ({
+  Client: vi.fn(),
+}));
+
 describe("Example", () => {
   it("Should return 200 response", async () => {
     const res = await app.request("/", {}, env);
