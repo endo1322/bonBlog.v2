@@ -29,9 +29,6 @@ importers:
       '@bonblogv2/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@tailwindcss/vite':
-        specifier: 4.0.17
-        version: 4.0.17(vite@6.2.0(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.2)(tsx@4.19.3))
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -41,9 +38,6 @@ importers:
       react-router:
         specifier: 7.4.0
         version: 7.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      tailwindcss:
-        specifier: 4.0.17
-        version: 4.0.17
     devDependencies:
       '@bonblogv2/server':
         specifier: workspace:*
@@ -63,6 +57,9 @@ importers:
       globals:
         specifier: ^15.15.0
         version: 15.15.0
+      tsx:
+        specifier: 4.19.3
+        version: 4.19.3
       vite:
         specifier: ^6.2.0
         version: 6.2.0(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.2)(tsx@4.19.3)
@@ -102,6 +99,9 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.1.2
         version: 1.1.2(@types/react@19.0.10)(react@19.0.0)
+      '@tailwindcss/vite':
+        specifier: 4.0.17
+        version: 4.0.17(vite@6.2.0(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.2)(tsx@4.19.3))
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -151,9 +151,9 @@ importers:
       tailwindcss:
         specifier: ^4.0.8
         version: 4.0.17
-      typescript:
-        specifier: ^5.7.3
-        version: 5.8.2
+      vite:
+        specifier: 6.2.0
+        version: 6.2.0(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.2)(tsx@4.19.3)
 
 packages:
 
@@ -4127,7 +4127,6 @@ snapshots:
   get-tsconfig@4.10.0:
     dependencies:
       resolve-pkg-maps: 1.0.0
-    optional: true
 
   get-uri@6.0.4:
     dependencies:
@@ -4749,8 +4748,7 @@ snapshots:
     dependencies:
       rc: 1.2.8
 
-  resolve-pkg-maps@1.0.0:
-    optional: true
+  resolve-pkg-maps@1.0.0: {}
 
   resolve@1.22.10:
     dependencies:
@@ -5028,7 +5026,6 @@ snapshots:
       get-tsconfig: 4.10.0
     optionalDependencies:
       fsevents: 2.3.3
-    optional: true
 
   turbo-darwin-64@2.4.4:
     optional: true

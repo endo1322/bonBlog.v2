@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import router from "@/routes.tsx";
 import { RouterProvider } from "react-router";
-import "@/globals.css";
+import "@bonblogv2/ui/globals.css";
 
 // biome-ignore lint/style/noNonNullAssertion:
 createRoot(document.getElementById("root")!).render(
