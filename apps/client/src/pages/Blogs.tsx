@@ -1,5 +1,6 @@
 import rpcClient, { type BlogsResponseType } from "@/apis";
 import { PATH } from "@/constants/path";
+import { BlogCardList } from "@/features/blogs/components/BlogCardList";
 import { buttonVariants } from "@bonblogv2/ui/components/button";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
@@ -23,9 +24,7 @@ const Blogs = () => {
     <>
       <h1>Blogs Page</h1>
       <div>
-        {blogs.map((blog) => (
-          <div key={blog.id}>{blog.title}</div>
-        ))}
+        <BlogCardList blogs={blogs} />
       </div>
       <Link className={buttonVariants({ variant: "outline" })} to={PATH.HOME}>
         Back to Home
