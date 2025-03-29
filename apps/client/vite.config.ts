@@ -1,9 +1,13 @@
 import react from "@vitejs/plugin-react-swc";
-import { defineConfig } from "vite";
+import { tsImport } from 'tsx/esm/api';
+import { defineConfig, mergeConfig } from "vite";
 import tsconfigPaths from 'vite-tsconfig-paths'
 
+const uiConfig = await tsImport('@bonblogv2/ui/vite.config', import.meta.url);
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), tsconfigPaths()],
-});
+export default mergeConfig(
+  uiConfig.default, 
+  defineConfig({
+    plugins: [react(), tsconfigPaths()],
+  })
+)

@@ -2,7 +2,10 @@ import reactLogo from "@/assets/react.svg";
 import viteLogo from "/vite.svg";
 import "@/App.css";
 import rpcClient from "@/apis";
+import { PATH } from "@/constants/path";
+import { buttonVariants } from "@bonblogv2/ui/components/button";
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -29,9 +32,13 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1 className="text-3xl font-bold underline">Vite + React</h1>
       <div className="card">
         <div>{message}</div>
+        <Link className={buttonVariants({ variant: "outline" })} to={PATH.BLOGS}>
+          View All Blogs
+        </Link>
+
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>

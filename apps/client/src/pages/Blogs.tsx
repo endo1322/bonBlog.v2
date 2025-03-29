@@ -1,5 +1,8 @@
 import rpcClient, { type BlogsResponseType } from "@/apis";
+import { PATH } from "@/constants/path";
+import { buttonVariants } from "@bonblogv2/ui/components/button";
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState<BlogsResponseType>([]);
@@ -24,6 +27,9 @@ const Blogs = () => {
           <div key={blog.id}>{blog.title}</div>
         ))}
       </div>
+      <Link className={buttonVariants({ variant: "outline" })} to={PATH.HOME}>
+        Back to Home
+      </Link>
     </>
   );
 };
