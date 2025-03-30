@@ -25,6 +25,7 @@
   "devDependencies": {
     "@bonblogv2/server": "workspace:*",
     "@bonblogv2/typescript-config": "workspace:*",
+    "@storybook/addon-essentials": "8.6.10",
     "@storybook/react": "8.6.10",
     "@storybook/react-vite": "8.6.10",
     "@types/react": "^19.0.10",
