@@ -12,3 +12,5 @@ export const Timestamp: React.FC<Props> = ({ dateTime }) => {
     </div>
   );
 };
+
+export default Timestamp;
