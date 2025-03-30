@@ -25,7 +25,7 @@ export const Default: Story = {
   args: {
     blog: {
       id: "1",
-      title: "Getting Started with React and TypeScript a",
+      title: "Getting Started with React and TypeScript",
       createdAt: "2025-03-22T12:00:00Z",
       updatedAt: "2025-03-22T12:00:00Z",
       tags: [
