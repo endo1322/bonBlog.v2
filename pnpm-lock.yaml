@@ -104,6 +104,9 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
     devDependencies:
+      '@bonblogv2/client':
+        specifier: workspace:*
+        version: link:../client
       '@chromatic-com/storybook':
         specifier: ^3
         version: 3.2.6(react@19.0.0)(storybook@8.6.11)

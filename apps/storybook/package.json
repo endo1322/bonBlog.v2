@@ -1,12 +1,13 @@
 {
-  "name": "storybook",
+  "name": "@bonblogv2/storybook",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "biome check .",
+    "lint:fix": "biome check . --write",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -16,6 +17,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@bonblogv2/client": "workspace:*",
     "@chromatic-com/storybook": "^3",
     "@eslint/js": "^9.21.0",
     "@storybook/addon-essentials": "^8.6.10",
@@ -36,10 +38,5 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
   }
 }
