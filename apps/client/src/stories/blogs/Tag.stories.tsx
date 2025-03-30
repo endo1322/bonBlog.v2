@@ -1,0 +1,27 @@
+import Tag from "@/features/blogs/components/Tag";
+import type { Meta, StoryObj } from "@storybook/react";
+
+const meta = {
+  title: "Features/Blogs/Tag",
+  component: Tag,
+  parameters: {
+    layout: "centered",
+  },
+  argTypes: {
+    label: {
+      control: {
+        type: "text",
+      },
+      description: "The label for the tag",
+    },
+  },
+} satisfies Meta<typeof Tag>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    label: "React",
+  },
+};

@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "@bonblogv2/client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,9 @@
     "lint:fix": "biome check . --write",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build"
   },
   "dependencies": {
     "@bonblogv2/ui": "workspace:*",
@@ -23,10 +25,14 @@
   "devDependencies": {
     "@bonblogv2/server": "workspace:*",
     "@bonblogv2/typescript-config": "workspace:*",
+    "@storybook/addon-essentials": "8.6.10",
+    "@storybook/react": "8.6.10",
+    "@storybook/react-vite": "8.6.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react-swc": "^3.8.0",
     "globals": "^15.15.0",
+    "storybook": "8.6.10",
     "tsx": "4.19.3",
     "vite": "^6.2.0",
     "vite-tsconfig-paths": "5.1.4"
