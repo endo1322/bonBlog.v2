@@ -1,6 +1,6 @@
 import { Tag } from "@/features/blogs/components/Tag";
+import Timestamp from "@/features/blogs/components/Timestamp";
 import type { Blogs } from "@/features/blogs/types/blog";
-import { Timestamp } from "./Timestamp";
 
 interface Props {
   blog: Blogs[number];
@@ -19,3 +19,5 @@ export const BlogCard: React.FC<Props> = ({ blog }) => {
     </div>
   );
 };
+
+export default BlogCard;
