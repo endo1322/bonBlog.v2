@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui";
-import { Tag } from "@/features/blogs/components/Tag";
-import Timestamp from "@/features/blogs/components/Timestamp";
+import { Tag, Timestamp } from "@/features/blogs/components";
 import type { Tags } from "@/features/blogs/types/blog";
 
 type Props = {

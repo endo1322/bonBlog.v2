@@ -1,4 +1,4 @@
-import { BlogListSkeleton } from "@/features/blogs/components/BlogListSkeleton";
+import { BlogListSkeleton } from "@/features/blogs/components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {

@@ -1,4 +1,4 @@
-import BlogCard from "@/features/blogs/components/BlogCard";
+import { BlogCard } from "@/features/blogs/components";
 import { mockBlogsResponseData } from "@/mocks/data/blogs";
 import type { Meta, StoryObj } from "@storybook/react";
 

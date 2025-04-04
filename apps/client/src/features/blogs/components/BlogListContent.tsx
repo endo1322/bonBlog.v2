@@ -1,4 +1,4 @@
-import BlogCard from "@/features/blogs/components/BlogCard";
+import { BlogCard } from "@/features/blogs/components";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { blogListQuery } from "../queries/blogList";
 

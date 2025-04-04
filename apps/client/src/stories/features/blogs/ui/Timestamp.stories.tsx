@@ -1,4 +1,4 @@
-import Timestamp from "@/features/blogs/components/Timestamp";
+import { Timestamp } from "@/features/blogs/components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
