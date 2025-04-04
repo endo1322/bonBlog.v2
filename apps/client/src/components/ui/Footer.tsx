@@ -1,4 +1,4 @@
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="flex w-full justify-center border-gray-200 border-t bg-white">
       <div className="flex h-20 max-w-6xl items-center">

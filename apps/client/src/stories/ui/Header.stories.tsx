@@ -1,4 +1,4 @@
-import Header from "@/components/ui/Header";
+import { Header } from "@/components/ui";
 import type { Meta, StoryObj } from "@storybook/react";
 import { withRouter } from "storybook-addon-remix-react-router";
 

@@ -1,6 +1,5 @@
-import Footer from "@/components/ui/Footer";
+import { Footer, Header } from "@/components/ui";
 import { Outlet } from "react-router";
-import Header from "../ui/Header";
 
 export const RootLayout = () => {
   return (

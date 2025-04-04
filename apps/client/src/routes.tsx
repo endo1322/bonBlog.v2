@@ -1,5 +1,5 @@
 import App from "@/App";
-import RootLayout from "@/components/layouts/RootLayout";
+import { RootLayout } from "@/components/layouts";
 import { PATH } from "@/constants/path";
 import Blogs from "@/pages/Blogs";
 import { createBrowserRouter } from "react-router";
