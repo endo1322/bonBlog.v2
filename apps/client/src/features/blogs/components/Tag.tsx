@@ -1,6 +1,6 @@
-export interface Props {
+type Props = {
   label: string;
-}
+};
 
 export const Tag: React.FC<Props> = ({ label }) => {
   return (

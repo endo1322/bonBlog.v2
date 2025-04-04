@@ -1,19 +1,21 @@
 import { Card } from "@/components/ui";
 import { Tag } from "@/features/blogs/components/Tag";
 import Timestamp from "@/features/blogs/components/Timestamp";
-import type { Blogs } from "@/features/blogs/types/blog";
+import type { Tags } from "@/features/blogs/types/blog";
 
-interface Props {
-  blog: Blogs[number];
-}
+type Props = {
+  title: string;
+  createdAt: string;
+  tags: Tags;
+};
 
-export const BlogCard: React.FC<Props> = ({ blog }) => {
+export const BlogCard: React.FC<Props> = ({ title, createdAt, tags }) => {
   return (
     <Card>
-      <Timestamp dateTime={blog.createdAt} />
-      <h2 className="mb-4 line-clamp-2 font-semibold text-gray-900 text-xl">{blog.title}</h2>
+      <Timestamp dateTime={createdAt} />
+      <h2 className="mb-4 line-clamp-2 font-semibold text-gray-900 text-xl">{title}</h2>
       <div className="flex flex-wrap gap-2">
-        {blog.tags.map((tag) => (
+        {tags.map((tag) => (
           <Tag key={tag.id} label={tag.name} />
         ))}
       </div>

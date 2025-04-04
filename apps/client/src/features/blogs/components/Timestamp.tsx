@@ -1,8 +1,8 @@
 import { Calendar } from "@bonblogv2/ui/icons";
 
-interface Props {
+type Props = {
   dateTime: string;
-}
+};
 
 export const Timestamp: React.FC<Props> = ({ dateTime }) => {
   return (

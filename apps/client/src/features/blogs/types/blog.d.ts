@@ -1,3 +1,5 @@
 import type { GetBlogsResponseType } from "@/features/blogs/apis/blogs";
 
-export interface Blogs extends GetBlogsResponseType {}
+export type Blogs = GetBlogsResponseType;
+
+export type Tags = Blogs[number]["tags"];
