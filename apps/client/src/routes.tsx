@@ -1,7 +1,7 @@
 import App from "@/App";
 import { RootLayout } from "@/components/layouts";
 import { PATH } from "@/constants/path";
-import Blogs from "@/pages/Blogs";
+import Blogs from "@/features/blogs/pages/Blogs";
 import { createBrowserRouter } from "react-router";
 
 const router = createBrowserRouter([
