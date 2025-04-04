@@ -33,6 +33,7 @@
     "@vitejs/plugin-react-swc": "^3.8.0",
     "globals": "^15.15.0",
     "storybook": "8.6.10",
+    "storybook-addon-remix-react-router": "4.0.1",
     "tsx": "4.19.3",
     "vite": "^6.2.0",
     "vite-tsconfig-paths": "5.1.4"
