@@ -1,11 +1,10 @@
-import reactLogo from "@/assets/react.svg";
-import viteLogo from "/vite.svg";
-import "@/App.css";
 import rpcClient from "@/apis";
+import reactLogo from "@/assets/react.svg";
 import { PATH } from "@/constants/path";
 import { buttonVariants } from "@bonblogv2/ui/components/button";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import viteLogo from "/vite.svg";
 
 function App() {
   const [message, setMessage] = useState("");
