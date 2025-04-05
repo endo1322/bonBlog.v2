@@ -1,6 +1,8 @@
 import type { Preview } from "@storybook/react";
 import "@bonblogv2/ui/globals.css";
+import { initialize, mswLoader } from 'msw-storybook-addon'
 
+initialize()
 
 const preview: Preview = {
   parameters: {
@@ -12,6 +14,7 @@ const preview: Preview = {
     },
   },
   tags: ['autodocs'],
+  loaders: [mswLoader],
 };
 
 export default preview;

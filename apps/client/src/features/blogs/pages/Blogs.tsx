@@ -1,11 +1,9 @@
 import rpcClient, { type BlogsResponseType } from "@/apis";
-import { PATH } from "@/constants/path";
+import { PageLayout } from "@/components/layouts";
 import { BlogCardList } from "@/features/blogs/components/BlogCardList";
-import { buttonVariants } from "@bonblogv2/ui/components/button";
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
 
-const Blogs = () => {
+const BlogsPage = () => {
   const [blogs, setBlogs] = useState<BlogsResponseType>([]);
 
   useEffect(() => {
@@ -21,16 +19,10 @@ const Blogs = () => {
   }, []);
 
   return (
-    <>
-      <h1>Blogs Page</h1>
-      <div>
-        <BlogCardList blogs={blogs} />
-      </div>
-      <Link className={buttonVariants({ variant: "outline" })} to={PATH.HOME}>
-        Back to Home
-      </Link>
-    </>
+    <PageLayout title={"Blog"}>
+      <BlogCardList blogs={blogs} />
+    </PageLayout>
   );
 };
 
-export default Blogs;
+export default BlogsPage;
