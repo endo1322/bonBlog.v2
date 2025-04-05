@@ -8,14 +8,8 @@ const router = createBrowserRouter([
   {
     Component: RootLayout,
     children: [
-      {
-        index: true,
-        Component: App,
-      },
-      {
-        path: PATH.BLOGS,
-        Component: BlogsPage,
-      },
+      { index: true, Component: App },
+      { path: PATH.BLOGS, Component: BlogsPage },
     ],
   },
 ]);
