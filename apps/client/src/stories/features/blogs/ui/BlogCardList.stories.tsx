@@ -2,7 +2,7 @@ import BlogCardList from "@/features/blogs/components/BlogCardList";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-  title: "Features/Blogs/BlogCardList",
+  title: "Features/Blogs/UI/BlogCardList",
   component: BlogCardList,
   parameters: {
     layout: "centered",

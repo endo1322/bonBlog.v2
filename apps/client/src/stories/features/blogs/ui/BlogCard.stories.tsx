@@ -2,7 +2,7 @@ import BlogCard from "@/features/blogs/components/BlogCard";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-  title: "Features/Blogs/BlogCard",
+  title: "Features/Blogs/UI/BlogCard",
   component: BlogCard,
   parameters: {
     layout: "centered",
