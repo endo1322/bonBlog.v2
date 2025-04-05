@@ -1,5 +1,6 @@
 import rpcClient from "@/apis";
 import reactLogo from "@/assets/react.svg";
+import { PageLayout } from "@/components/layouts";
 import { PATH } from "@/constants/path";
 import { buttonVariants } from "@bonblogv2/ui/components/button";
 import { useEffect, useState } from "react";
@@ -22,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <PageLayout title={"Home"}>
       <div>
         <a href="https://vite.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -43,7 +44,7 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more!</p>
-    </>
+    </PageLayout>
   );
 }
 

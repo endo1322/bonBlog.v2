@@ -1,8 +1,9 @@
 import rpcClient, { type BlogsResponseType } from "@/apis";
+import { PageLayout } from "@/components/layouts";
 import { BlogCardList } from "@/features/blogs/components/BlogCardList";
 import { useEffect, useState } from "react";
 
-const Blogs = () => {
+const BlogsPage = () => {
   const [blogs, setBlogs] = useState<BlogsResponseType>([]);
 
   useEffect(() => {
@@ -17,7 +18,11 @@ const Blogs = () => {
     fetchData();
   }, []);
 
-  return <BlogCardList blogs={blogs} />;
+  return (
+    <PageLayout title={"Blog"}>
+      <BlogCardList blogs={blogs} />
+    </PageLayout>
+  );
 };
 
-export default Blogs;
+export default BlogsPage;
