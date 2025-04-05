@@ -1,3 +1,4 @@
+import { Card } from "@/components/ui";
 import { Tag } from "@/features/blogs/components/Tag";
 import Timestamp from "@/features/blogs/components/Timestamp";
 import type { Blogs } from "@/features/blogs/types/blog";
@@ -8,7 +9,7 @@ interface Props {
 
 export const BlogCard: React.FC<Props> = ({ blog }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow hover:cursor-pointer">
+    <Card>
       <Timestamp dateTime={blog.createdAt} />
       <h2 className="text-xl font-semibold text-gray-900 mb-4 line-clamp-2">{blog.title}</h2>
       <div className="flex flex-wrap gap-2">
@@ -16,7 +17,7 @@ export const BlogCard: React.FC<Props> = ({ blog }) => {
           <Tag key={tag.id} label={tag.name} />
         ))}
       </div>
-    </div>
+    </Card>
   );
 };
 
