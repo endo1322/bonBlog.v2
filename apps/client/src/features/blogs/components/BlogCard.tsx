@@ -12,7 +12,7 @@ type Props = {
 export const BlogCard: React.FC<Props> = ({ title, createdAt, tags }) => {
   return (
     <Card>
-      <Timestamp dateTime={createdAt} />
+      <Timestamp className={"mb-2"} dateTime={createdAt} />
       <h2 className="mb-4 line-clamp-2 font-semibold text-gray-900 text-xl">{title}</h2>
       <div className="flex flex-wrap gap-2">
         {tags.map((tag) => (
