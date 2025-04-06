@@ -1,5 +1,5 @@
 import { PageLayout } from "@/components/layouts";
-import { ErrorBoundaryWrapper } from "@/components/ui/Error";
+import { ErrorBoundaryWrapper } from "@/components/ui";
 import { BlogListContent } from "@/features/blogs/components/BlogListContent";
 import { BlogListSkeleton } from "@/features/blogs/components/BlogListSkeleton";
 import { Suspense } from "react";
