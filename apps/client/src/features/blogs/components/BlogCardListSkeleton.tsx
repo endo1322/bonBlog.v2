@@ -29,8 +29,9 @@ const BlogCardSkeleton: React.FC = () => {
       <TimestampSkeleton className="mb-2" />
       <BlogTitleSkeleton className="mb-4" />
       <div className="flex flex-wrap gap-2">
-        {[1, 2, 3].map((i) => (
-          <TagSkeleton key={i} />
+        {[...Array(3)].map((_, index) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          <TagSkeleton key={index} />
         ))}
       </div>
     </Card>
@@ -40,8 +41,9 @@ const BlogCardSkeleton: React.FC = () => {
 export const BlogCardListSkeleton: React.FC = () => {
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {[...Array(12)].map((i) => (
-        <BlogCardSkeleton key={i} />
+      {[...Array(12)].map((_, index) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+        <BlogCardSkeleton key={index} />
       ))}
     </div>
   );
