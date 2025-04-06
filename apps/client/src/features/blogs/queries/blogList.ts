@@ -1,8 +1,8 @@
-import { getBlogList } from "@/features/blogs/apis/blogList";
+import { getBlogs } from "@/features/blogs/apis/blogs";
 import { queryOptions } from "@tanstack/react-query";
 
 export const blogListQuery = () =>
   queryOptions({
     queryKey: ["blog", "list"],
-    queryFn: () => getBlogList(),
+    queryFn: () => getBlogs(),
   });
