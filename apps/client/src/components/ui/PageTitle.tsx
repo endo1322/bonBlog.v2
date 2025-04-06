@@ -13,5 +13,3 @@ export const PageTitle = ({ className, title }: Props) => {
     </div>
   );
 };
-
-export default PageTitle;

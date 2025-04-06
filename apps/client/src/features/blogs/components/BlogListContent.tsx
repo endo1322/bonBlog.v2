@@ -13,5 +13,3 @@ export const BlogListContent: React.FC = () => {
     </div>
   );
 };
-
-export default BlogListContent;

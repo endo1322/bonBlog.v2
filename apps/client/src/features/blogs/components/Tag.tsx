@@ -9,5 +9,3 @@ export const Tag: React.FC<Props> = ({ label }) => {
     </span>
   );
 };
-
-export default Tag;

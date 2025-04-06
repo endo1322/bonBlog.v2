@@ -21,5 +21,3 @@ export const BlogCard: React.FC<Props> = ({ title, createdAt, tags }) => {
     </Card>
   );
 };
-
-export default BlogCard;

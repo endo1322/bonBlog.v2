@@ -12,5 +12,3 @@ export const RootLayout = () => {
     </div>
   );
 };
-
-export default RootLayout;
