@@ -1,4 +1,6 @@
-import { QueryClient } from "@tanstack/react-query";
+import { getIndex } from "@/apis";
+import { QUERY_KEY } from "@/constants/queryKey";
+import { QueryClient, queryOptions } from "@tanstack/react-query";
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -7,3 +9,9 @@ export const queryClient = new QueryClient({
     },
   },
 });
+
+export const helloQuery = () =>
+  queryOptions({
+    queryKey: QUERY_KEY.HELLO,
+    queryFn: () => getIndex(),
+  });
