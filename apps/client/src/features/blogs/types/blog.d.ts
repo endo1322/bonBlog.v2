@@ -1,3 +1,3 @@
-import type { BlogsResponseType } from "@/apis";
+import type { GetBlogsResponseType } from "@/features/blogs/apis/blogs";
 
-export interface Blogs extends BlogsResponseType {}
+export interface Blogs extends GetBlogsResponseType {}
