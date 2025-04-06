@@ -29,6 +29,9 @@ importers:
       '@bonblogv2/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@tanstack/react-query':
+        specifier: 5.71.10
+        version: 5.71.10(react@19.0.0)
       lucide-react:
         specifier: 0.475.0
         version: 0.475.0(react@19.0.0)
@@ -57,6 +60,9 @@ importers:
       '@storybook/react-vite':
         specifier: 8.6.10
         version: 8.6.10(@storybook/test@8.6.10(storybook@8.6.10))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(rollup@4.34.8)(storybook@8.6.10)(typescript@5.7.2)(vite@6.2.0(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.2)(tsx@4.19.3))
+      '@tanstack/react-query-devtools':
+        specifier: 5.71.10
+        version: 5.71.10(@tanstack/react-query@5.71.10(react@19.0.0))(react@19.0.0)
       '@types/react':
         specifier: ^19.0.10
         version: 19.0.10
@@ -1526,6 +1532,23 @@ packages:
     resolution: {integrity: sha512-HJbBYDlDVg5cvYZzECb6xwc1IDCEM3uJi3hEZp3BjZGCNGJcTsnCpan+z+VMW0zo6gR0U6O6ElqU1OoZ74Dhww==}
     peerDependencies:
       vite: ^5.2.0 || ^6
+
+  '@tanstack/query-core@5.71.10':
+    resolution: {integrity: sha512-/fKEY8fO1nbszfrBatzmhJa1nEwIKn0c6Tv2A1ocSA5OiD2GukOIV8nnBbvJRgZb/VIoBy9/N4PVbABI8YQLow==}
+
+  '@tanstack/query-devtools@5.71.5':
+    resolution: {integrity: sha512-Fq1JeAp+I52Md/KnyeFxzG7G0RpdHgeOfDNhSPkZQs/JqqXuAfpUf+wFHDz+vP0GZbSnla2JmcLSQebOkIb1yA==}
+
+  '@tanstack/react-query-devtools@5.71.10':
+    resolution: {integrity: sha512-n0xsIzwNvkIoZCmfHww28jFmnVTVzOt5dHj/py3LNFMJHGnJq9o9ttQESzVt2Hr7as00Aqf8ElVwH6na1o6dnw==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.71.10
+      react: ^18 || ^19
+
+  '@tanstack/react-query@5.71.10':
+    resolution: {integrity: sha512-mQYM/ObpL8YMDz8vCoUuHkbe8Yu7NnVRH8aBaBa/3zlufjp1f1VuWjeO3TcumNHfuVMDwEAGinsgwrB7OKADiQ==}
+    peerDependencies:
+      react: ^18 || ^19
 
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
@@ -4840,6 +4863,21 @@ snapshots:
       lightningcss: 1.29.2
       tailwindcss: 4.0.17
       vite: 6.2.0(@types/node@20.17.19)(jiti@2.4.2)(lightningcss@1.29.2)(tsx@4.19.3)
+
+  '@tanstack/query-core@5.71.10': {}
+
+  '@tanstack/query-devtools@5.71.5': {}
+
+  '@tanstack/react-query-devtools@5.71.10(@tanstack/react-query@5.71.10(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@tanstack/query-devtools': 5.71.5
+      '@tanstack/react-query': 5.71.10(react@19.0.0)
+      react: 19.0.0
+
+  '@tanstack/react-query@5.71.10(react@19.0.0)':
+    dependencies:
+      '@tanstack/query-core': 5.71.10
+      react: 19.0.0
 
   '@testing-library/dom@10.4.0':
     dependencies:
