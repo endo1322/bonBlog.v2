@@ -1,4 +1,5 @@
 import { PageLayout } from "@/components/layouts";
+import { ErrorBoundaryWrapper } from "@/components/ui";
 import { PATH } from "@/constants/path";
 import { helloQuery } from "@/queries";
 import { buttonVariants } from "@bonblogv2/ui/components/button";
@@ -16,9 +17,11 @@ function App() {
     <PageLayout title={"Home"}>
       <h1 className="text-3xl font-bold underline">Vite + React</h1>
       <div className="card">
-        <Suspense fallback={<div>Loading...</div>}>
-          <HelloContent />
-        </Suspense>
+        <ErrorBoundaryWrapper>
+          <Suspense fallback={<div>Loading...</div>}>
+            <HelloContent />
+          </Suspense>
+        </ErrorBoundaryWrapper>
         <Link className={buttonVariants({ variant: "outline" })} to={PATH.BLOGS}>
           View All Blogs
         </Link>
