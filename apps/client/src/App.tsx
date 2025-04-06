@@ -1,44 +1,30 @@
-import rpcClient from "@/apis";
-import reactLogo from "@/assets/react.svg";
 import { PageLayout } from "@/components/layouts";
+import { ErrorBoundaryWrapper } from "@/components/ui";
 import { PATH } from "@/constants/path";
+import { helloQuery } from "@/queries";
 import { buttonVariants } from "@bonblogv2/ui/components/button";
-import { useEffect, useState } from "react";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { Suspense } from "react";
 import { Link } from "react-router";
-import viteLogo from "/vite.svg";
+
+const HelloContent = () => {
+  const { data: hello } = useSuspenseQuery(helloQuery());
+  return <div>{hello.message}</div>;
+};
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await rpcClient.index.$get();
-      if (res.ok) {
-        const data = await res.json();
-        setMessage(data.message);
-      }
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <PageLayout title={"Home"}>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
       <h1 className="text-3xl font-bold underline">Vite + React</h1>
       <div className="card">
-        <div>{message}</div>
+        <ErrorBoundaryWrapper>
+          <Suspense fallback={<div>Loading...</div>}>
+            <HelloContent />
+          </Suspense>
+        </ErrorBoundaryWrapper>
         <Link className={buttonVariants({ variant: "outline" })} to={PATH.BLOGS}>
           View All Blogs
         </Link>
-
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
