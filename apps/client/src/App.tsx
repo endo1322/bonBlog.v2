@@ -15,7 +15,7 @@ const HelloContent = () => {
 function App() {
   return (
     <PageLayout title={"Home"}>
-      <h1 className="text-3xl font-bold underline">Vite + React</h1>
+      <h1 className="font-bold text-3xl underline">Vite + React</h1>
       <div className="card">
         <ErrorBoundaryWrapper>
           <Suspense fallback={<div>Loading...</div>}>

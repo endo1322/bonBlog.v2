@@ -9,7 +9,7 @@ export const Card = ({ className, children }: Props) => {
   return (
     <div
       className={cn(
-        "bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow hover:cursor-pointer",
+        "rounded-lg bg-white p-6 shadow-md transition-shadow hover:cursor-pointer hover:shadow-lg",
         className,
       )}
     >

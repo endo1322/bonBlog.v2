@@ -11,7 +11,7 @@ export const BlogCard: React.FC<Props> = ({ blog }) => {
   return (
     <Card>
       <Timestamp dateTime={blog.createdAt} />
-      <h2 className="text-xl font-semibold text-gray-900 mb-4 line-clamp-2">{blog.title}</h2>
+      <h2 className="mb-4 line-clamp-2 font-semibold text-gray-900 text-xl">{blog.title}</h2>
       <div className="flex flex-wrap gap-2">
         {blog.tags.map((tag) => (
           <Tag key={tag.id} label={tag.name} />
