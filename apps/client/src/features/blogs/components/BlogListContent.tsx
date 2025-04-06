@@ -1,6 +1,6 @@
 import { BlogCard } from "@/features/blogs/components";
+import { blogListQuery } from "@/features/blogs/queries/blogList";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { blogListQuery } from "../queries/blogList";
 
 export const BlogListContent: React.FC = () => {
   const { data: blogs } = useSuspenseQuery(blogListQuery());
