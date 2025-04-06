@@ -6,11 +6,11 @@ type Props = {
   className?: string;
 };
 
-const TimestampSkeleton: React.FC<Props> = ({ className }) => {
+const TimestampSkeleton = ({ className }: Props) => {
   return <Skeleton className={cn("h-5 w-20", className)} />;
 };
 
-const BlogTitleSkeleton: React.FC<Props> = ({ className }) => {
+const BlogTitleSkeleton = ({ className }: Props) => {
   return (
     <div className={cn("flex flex-col gap-2", className)}>
       <Skeleton className="h-6" />
@@ -19,11 +19,11 @@ const BlogTitleSkeleton: React.FC<Props> = ({ className }) => {
   );
 };
 
-const TagSkeleton: React.FC = () => {
+const TagSkeleton = () => {
   return <Skeleton className="h-5 w-16 rounded-full" />;
 };
 
-const BlogCardSkeleton: React.FC = () => {
+const BlogCardSkeleton = () => {
   return (
     <Card>
       <TimestampSkeleton className="mb-2" />
@@ -38,7 +38,7 @@ const BlogCardSkeleton: React.FC = () => {
   );
 };
 
-export const BlogListSkeleton: React.FC = () => {
+export const BlogListSkeleton = () => {
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {[...Array(12)].map((_, index) => (

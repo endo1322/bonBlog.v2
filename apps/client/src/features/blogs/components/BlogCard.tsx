@@ -8,7 +8,7 @@ type Props = {
   tags: Tags;
 };
 
-export const BlogCard: React.FC<Props> = ({ title, createdAt, tags }) => {
+export const BlogCard = ({ title, createdAt, tags }: Props) => {
   return (
     <Card>
       <Timestamp className={"mb-2"} dateTime={createdAt} />

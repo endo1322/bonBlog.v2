@@ -6,7 +6,7 @@ type Props = {
   dateTime: string;
 };
 
-export const Timestamp: React.FC<Props> = ({ className, dateTime }) => {
+export const Timestamp = ({ className, dateTime }: Props) => {
   return (
     <div className={cn("flex items-center text-gray-500 text-sm", className)}>
       <Calendar size={16} className="mr-1" />
