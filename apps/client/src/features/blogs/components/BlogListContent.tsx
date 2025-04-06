@@ -8,7 +8,7 @@ export const BlogListContent = () => {
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {blogs.map((blog) => (
-        <BlogCard key={blog.id} {...blog} />
+        <BlogCard key={blog.id} title={blog.title} createdAt={blog.createdAt} tags={blog.tags} />
       ))}
     </div>
   );
