@@ -1,4 +1,4 @@
-import BlogListContent from "@/features/blogs/components/BlogListContent";
+import { BlogListContent } from "@/features/blogs/components";
 import blogsHandlers from "@/mocks/handlers/blogs";
 import type { Meta, StoryObj } from "@storybook/react";
 

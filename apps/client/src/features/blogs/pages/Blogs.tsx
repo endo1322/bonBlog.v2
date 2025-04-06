@@ -1,7 +1,6 @@
 import { PageLayout } from "@/components/layouts";
 import { ErrorBoundaryWrapper } from "@/components/ui";
-import { BlogListContent } from "@/features/blogs/components/BlogListContent";
-import { BlogListSkeleton } from "@/features/blogs/components/BlogListSkeleton";
+import { BlogListContent, BlogListSkeleton } from "@/features/blogs/components";
 import { Suspense } from "react";
 
 const BlogsPage = () => {

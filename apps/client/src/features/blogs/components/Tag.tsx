@@ -1,13 +1,11 @@
-export interface Props {
+type Props = {
   label: string;
-}
+};
 
-export const Tag: React.FC<Props> = ({ label }) => {
+export const Tag = ({ label }: Props) => {
   return (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+    <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 font-medium text-blue-800 text-xs">
       {label}
     </span>
   );
 };
-
-export default Tag;

@@ -4,9 +4,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta = {
   title: "UI/PageTitle",
   component: PageTitle,
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     title: {
       control: { type: "text" },

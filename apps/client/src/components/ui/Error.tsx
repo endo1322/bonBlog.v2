@@ -1,4 +1,4 @@
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle } from "@bonblogv2/ui/icons";
 import { ErrorBoundary } from "react-error-boundary";
 
 type Props = {

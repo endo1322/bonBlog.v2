@@ -1,13 +1,15 @@
-import Timestamp from "@/features/blogs/components/Timestamp";
+import { Timestamp } from "@/features/blogs/components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
   title: "Features/Blogs/UI/Timestamp",
   component: Timestamp,
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
+    className: {
+      table: {
+        disable: true,
+      },
+    },
     dateTime: {
       control: {
         type: "date",

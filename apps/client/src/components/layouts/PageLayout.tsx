@@ -21,5 +21,3 @@ export const PageLayout = ({ title, children }: Props) => {
     </div>
   );
 };
-
-export default PageLayout;

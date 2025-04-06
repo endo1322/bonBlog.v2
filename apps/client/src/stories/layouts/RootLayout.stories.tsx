@@ -1,4 +1,4 @@
-import RootLayout from "@/components/layouts/RootLayout";
+import { RootLayout } from "@/components/layouts";
 import type { Meta, StoryObj } from "@storybook/react";
 import { withRouter } from "storybook-addon-remix-react-router";
 
