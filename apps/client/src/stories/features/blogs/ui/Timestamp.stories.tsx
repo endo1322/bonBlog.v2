@@ -5,6 +5,11 @@ const meta = {
   title: "Features/Blogs/UI/Timestamp",
   component: Timestamp,
   argTypes: {
+    className: {
+      table: {
+        disable: true,
+      },
+    },
     dateTime: {
       control: {
         type: "date",
