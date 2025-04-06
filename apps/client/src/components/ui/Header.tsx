@@ -1,6 +1,6 @@
 import { PATH } from "@/constants/path";
 import { URL } from "@/constants/url";
-import { Github } from "lucide-react";
+import { Github } from "@bonblogv2/ui/icons";
 import { Link } from "react-router";
 
 export const Header = () => {

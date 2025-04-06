@@ -1,4 +1,4 @@
-import { Calendar } from "lucide-react";
+import { Calendar } from "@bonblogv2/ui/icons";
 
 interface Props {
   dateTime: string;
