@@ -4,9 +4,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta = {
   title: "UI/Card",
   component: Card,
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     className: {
       table: {

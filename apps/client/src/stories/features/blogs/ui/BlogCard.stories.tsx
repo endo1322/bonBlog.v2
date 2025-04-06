@@ -5,9 +5,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta = {
   title: "Features/Blogs/UI/BlogCard",
   component: BlogCard,
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     title: {
       control: { type: "text" },

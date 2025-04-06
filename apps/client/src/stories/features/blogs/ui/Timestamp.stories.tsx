@@ -4,9 +4,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta = {
   title: "Features/Blogs/UI/Timestamp",
   component: Timestamp,
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     dateTime: {
       control: {

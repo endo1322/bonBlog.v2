@@ -4,9 +4,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta = {
   title: "Features/Blogs/UI/Tag",
   component: Tag,
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     label: {
       control: {
