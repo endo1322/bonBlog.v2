@@ -4,6 +4,6 @@ import { queryOptions } from "@tanstack/react-query";
 
 export const blogListQuery = () =>
   queryOptions({
-    queryKey: QUERY_KEY.BLOGLIST,
+    queryKey: QUERY_KEY.BLOG_LIST,
     queryFn: () => getBlogs(),
   });

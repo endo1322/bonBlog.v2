@@ -1,4 +1,4 @@
 export const QUERY_KEY = {
   HELLO: ["hello"],
-  BLOGLIST: ["blog", "list"],
+  BLOG_LIST: ["blog", "list"],
 };
