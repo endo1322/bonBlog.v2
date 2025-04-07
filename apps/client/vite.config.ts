@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+import path from 'node:path';
 import react from "@vitejs/plugin-react-swc";
 import { tsImport } from 'tsx/esm/api';
 import { defineConfig, mergeConfig } from "vite";
@@ -9,5 +11,14 @@ export default mergeConfig(
   uiConfig.default, 
   defineConfig({
     plugins: [react(), tsconfigPaths()],
+    test: {
+      globals: true,
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+        '@ui': path.resolve(__dirname, '../../packages/ui/src'),
+      },
+      setupFiles: ['./src/tests/vitest.setup.ts'],
+      environment: "jsdom",
+    },
   })
 )
