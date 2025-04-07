@@ -6,7 +6,7 @@ import { render, screen } from "@testing-library/react";
 
 describe("BlogsPage", () => {
   describe("Error", () => {
-    it("リクエストに成功した時、エラーメッセージが表示される", async () => {
+    it("リクエストに失敗した時、エラーメッセージが表示される", async () => {
       server.use(mockGetBlogs500ErrorHandler);
       render(<BlogsPage />, { wrapper: TestWrapper });
 
