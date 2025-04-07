@@ -4,8 +4,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "biome check .",
-    "lint:fix": "biome check . --write"
+    "lint": "biome check . --unsafe",
+    "lint:fix": "biome check . --write --unsafe"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
@@ -34,8 +34,8 @@
     "./globals.css": "./src/styles/globals.css",
     "./postcss.config": "./postcss.config.mjs",
     "./lib/*": "./src/lib/*.ts",
-    "./components/*": "./src/components/*.tsx",
-    "./icons/*": "./src/icons/index.ts",
+    "./components": "./src/components/index.ts",
+    "./icons": "./src/icons/index.ts",
     "./vite.config": "./vite.config.ts"
   }
 }
