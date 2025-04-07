@@ -2,7 +2,7 @@ import { PageLayout } from "@/components/layouts";
 import { ErrorBoundaryWrapper } from "@/components/ui";
 import { PATH } from "@/constants/path";
 import { helloQuery } from "@/queries";
-import { buttonVariants } from "@bonblogv2/ui/components/button";
+import { buttonVariants } from "@bonblogv2/ui/components/";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Suspense } from "react";
 import { Link } from "react-router";

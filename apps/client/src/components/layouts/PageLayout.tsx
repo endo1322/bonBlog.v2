@@ -1,6 +1,6 @@
 import { PageTitle } from "@/components/ui";
 import { PATH } from "@/constants/path";
-import { buttonVariants } from "@bonblogv2/ui/components/button";
+import { buttonVariants } from "@bonblogv2/ui/components";
 import { Link } from "react-router";
 
 type Props = {
