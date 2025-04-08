@@ -4,9 +4,9 @@
     "ignore": ["dist"]
   },
   "linter": {
-    "include": ["src/**"]
+    "include": ["src/**", "public/**"]
   },
   "formatter": {
-    "include": ["src/**"]
+    "include": ["src/**", "public/**"]
   }
 }

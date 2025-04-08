@@ -1,47 +1,36 @@
-import { useEffect, useState } from "react";
-import viteLogo from "/vite.svg";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-import { createClient } from "../../server/src/index";
+import { PageLayout } from "@/components/layouts";
+import { ErrorBoundaryWrapper } from "@/components/ui";
+import { PATH } from "@/constants/path";
+import { helloQuery } from "@/queries";
+import { buttonVariants } from "@bonblogv2/ui/components/";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { Suspense } from "react";
+import { Link } from "react-router";
 
-const serverUrl = import.meta.env.VITE_SERVER_URL;
+const HelloContent = () => {
+  const { data: hello } = useSuspenseQuery(helloQuery());
+  return <div>{hello.message}</div>;
+};
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  const client = createClient(serverUrl);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await client.index.$get();
-      if (res.ok) {
-        const data = await res.json();
-        setMessage(data.message);
-      }
-    };
-
-    fetchData();
-  }, [client]);
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+    <PageLayout title={"Home"}>
+      <h1 className="font-bold text-3xl underline">Vite + React</h1>
       <div className="card">
-        <div>{message}</div>
+        <ErrorBoundaryWrapper>
+          <Suspense fallback={<div>Loading...</div>}>
+            <HelloContent />
+          </Suspense>
+        </ErrorBoundaryWrapper>
+        <Link className={buttonVariants({ variant: "outline" })} to={PATH.BLOGS}>
+          View All Blogs
+        </Link>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more!</p>
-    </>
+    </PageLayout>
   );
 }
 

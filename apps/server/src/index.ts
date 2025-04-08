@@ -1,6 +1,7 @@
 import { Hono } from "hono";
-import { hc } from "hono/client";
+import { type InferResponseType, hc } from "hono/client";
 import { cors } from "hono/cors";
+import blogs from "./routes/blogs";
 
 type Bindings = {
   CLIENT_URLS: string[];
@@ -23,7 +24,8 @@ const router = app
   })
   .get("/", (c) => {
     return c.json({ message: "Hello Hono!" });
-  });
+  })
+  .route("/blogs", blogs);
 
 export default app;
 
@@ -31,6 +33,8 @@ export type AppRouteType = typeof router;
 
 type ClientType = typeof hc<AppRouteType>;
 
-export const createClient = (...args: Parameters<ClientType>): ReturnType<ClientType> => {
+export const createHonoClient = (...args: Parameters<ClientType>): ReturnType<ClientType> => {
   return hc<AppRouteType>(...args);
 };
+
+export type InferHonoType<T> = InferResponseType<T>;
