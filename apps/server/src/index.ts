@@ -1,7 +1,7 @@
+import blogs from "@server/routes/blogs";
 import { Hono } from "hono";
 import { type InferResponseType, hc } from "hono/client";
 import { cors } from "hono/cors";
-import blogs from "./routes/blogs";
 
 type Bindings = {
   CLIENT_URLS: string[];

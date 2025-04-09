@@ -1,8 +1,12 @@
 import { env } from "cloudflare:test";
-import app from "./index";
+import app from "@server/index";
 
 vi.mock("@notionhq/client", () => ({
   Client: vi.fn(),
+}));
+
+vi.mock("@notion-md-converter/core", () => ({
+  NotionMarkdownConverter: vi.fn(),
 }));
 
 describe("Example", () => {
