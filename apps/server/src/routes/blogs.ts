@@ -1,6 +1,6 @@
+import { queryDatabase } from "@server/apis/notion/database";
+import notionMiddleware from "@server/middlewares/notion";
 import { Hono } from "hono";
-import { queryDatabase } from "../apis/notion/database";
-import notionMiddleware from "../middlewares/notion";
 
 const blogs = new Hono().get("/", notionMiddleware, async (c) => {
   try {

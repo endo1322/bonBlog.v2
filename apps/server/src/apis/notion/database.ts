@@ -1,5 +1,5 @@
+import type { NotionEnv } from "@server/middlewares/notion";
 import type { Context } from "hono";
-import type { NotionEnv } from "../../middlewares/notion";
 
 export const queryDatabase = async (c: Context<NotionEnv>) => {
   const notion = c.var.notion;
