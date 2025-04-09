@@ -30,7 +30,8 @@ const blogs = new Hono()
         }[],
       );
     } catch (error) {
-      return c.json({ message: "Failed to fetch database", error: error }, 500);
+      console.error("Error fetching database:", error);
+      return c.json({ message: "Failed to fetch database" }, 500);
     }
   })
   .get("/:id", notionMiddleware, async (c) => {
@@ -54,7 +55,8 @@ const blogs = new Hono()
         content: mdFormatter(mdContent),
       });
     } catch (error) {
-      return c.json({ message: "Failed to fetch page", error: error }, 500);
+      console.error("Error fetching page:", error);
+      return c.json({ message: "Failed to fetch page" }, 500);
     }
   });
 export default blogs;
