@@ -5,6 +5,10 @@ vi.mock("@notionhq/client", () => ({
   Client: vi.fn(),
 }));
 
+vi.mock("@notion-md-converter/core", () => ({
+  NotionMarkdownConverter: vi.fn(),
+}));
+
 describe("Example", () => {
   it("Should return 200 response", async () => {
     const res = await app.request("/", {}, env);
