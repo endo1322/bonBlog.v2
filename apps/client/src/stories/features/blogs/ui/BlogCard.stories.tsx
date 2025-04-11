@@ -1,5 +1,5 @@
 import { BlogCard } from "@/features/blogs/components";
-import { mockBlogsResponseData } from "@/mocks/data/blogs";
+import { mockGetBlogs200ResponseData } from "@/mocks/data/blogs";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
@@ -34,5 +34,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: (({ id, updatedAt, ...rest }) => rest)(mockBlogsResponseData[0]),
+  args: (({ id, updatedAt, ...rest }) => rest)(mockGetBlogs200ResponseData[0]),
 };
