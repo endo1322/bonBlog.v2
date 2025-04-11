@@ -4,13 +4,14 @@ type Props = {
   className?: string;
   children?: React.ReactNode;
   isPointer?: boolean;
+  as?: "div" | "article";
 };
 
-export const Card = ({ className, children, isPointer = true }: Props) => {
+export const Card = ({ className, children, isPointer = true, as: CustomTag = "div" }: Props) => {
   const pointerClass = isPointer ? "hover:cursor-pointer hover:shadow-lg transition-shadow" : "";
   return (
-    <div className={cn("rounded-lg bg-white p-6 shadow-md", className, pointerClass)}>
+    <CustomTag className={cn("rounded-lg bg-white p-6 shadow-md", className, pointerClass)}>
       {children}
-    </div>
+    </CustomTag>
   );
 };

@@ -1,8 +1,7 @@
-import { Card } from "@/components/ui";
+import { Card, MarkdownWrapper } from "@/components/ui";
 import { Tag, Timestamp } from "@/features/blogs/components";
 import { blogDetailQuery } from "@/features/blogs/queries/blogDetail";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import Markdown from "react-markdown";
 import { useParams } from "react-router";
 
 export const BlogDetailContent = () => {
@@ -11,18 +10,22 @@ export const BlogDetailContent = () => {
   const { data: blog } = useSuspenseQuery(blogDetailQuery(id));
 
   return (
-    <Card isPointer={false}>
-      <div className="mb-4 flex gap-4">
-        <Timestamp dateTime={blog.createdAt} />
-        <Timestamp dateTime={blog.updatedAt} />
+    <Card as={"article"} isPointer={false}>
+      <header className=" mb-10">
+        <div className="mb-4 flex gap-4">
+          <Timestamp type={"created"} dateTime={blog.createdAt} />
+          <Timestamp type={"updated"} dateTime={blog.updatedAt} />
+        </div>
+        <h1 className="mb-2 font-bold text-3xl">{blog.title}</h1>
+        <div className="flex flex-wrap gap-2">
+          {blog.tags.map((tag) => (
+            <Tag key={tag.id} label={tag.name} />
+          ))}
+        </div>
+      </header>
+      <div>
+        <MarkdownWrapper markdown={blog.content} />
       </div>
-      <h1 className="mb-2 font-bold text-3xl">{blog.title}</h1>
-      <div className="mb-4 flex flex-wrap gap-2">
-        {blog.tags.map((tag) => (
-          <Tag key={tag.id} label={tag.name} />
-        ))}
-      </div>
-      <Markdown>{blog.content}</Markdown>
     </Card>
   );
 };
