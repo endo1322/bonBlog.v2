@@ -10,4 +10,15 @@ export const getIndex = async () => {
 
 export type GetIndexResponseType = InferHonoType<typeof rpcClient.index.$get>;
 
+export type ErrorResponseType = { message: string };
+export type ExcludeErrorResponseType<T> = Exclude<T, ErrorResponseType>;
+
+export const isErrorType = (data: unknown): data is ErrorResponseType => {
+  return (
+    typeof data === "object" &&
+    data !== null &&
+    typeof (data as ErrorResponseType).message === "string"
+  );
+};
+
 export default rpcClient;

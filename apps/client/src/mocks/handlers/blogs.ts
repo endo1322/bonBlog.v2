@@ -1,13 +1,14 @@
 import { serverUrl } from "@/constants/env";
-import { mockBlogsResponseData } from "@/mocks/data/blogs";
+import { mockGetBlogs200ResponseData } from "@/mocks/data/blogs";
+import { mockErrorResponseData } from "@/mocks/data/error";
 import { http, HttpResponse } from "msw";
 
 const mockGetBlogs200SuccessHandler = http.get(`${serverUrl}/blogs`, () =>
-  HttpResponse.json(mockBlogsResponseData, { status: 200 }),
+  HttpResponse.json(mockGetBlogs200ResponseData, { status: 200 }),
 );
 
 export const mockGetBlogs500ErrorHandler = http.get(`${serverUrl}/blogs`, () =>
-  HttpResponse.json("", { status: 500 }),
+  HttpResponse.json(mockErrorResponseData, { status: 500 }),
 );
 
 export default [mockGetBlogs200SuccessHandler];

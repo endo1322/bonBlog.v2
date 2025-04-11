@@ -1,6 +1,6 @@
 import type { GetBlogsResponseType } from "@/features/blogs/apis/blogs";
 
-export const mockBlogsResponseData: GetBlogsResponseType = [
+export const mockGetBlogs200ResponseData: GetBlogsResponseType = [
   {
     id: "1",
     title: "Getting Started with React and TypeScript",
