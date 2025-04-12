@@ -16,6 +16,13 @@ const meta = {
         type: { summary: "string" },
       },
     },
+    titleLink: {
+      control: { type: "text" },
+      description: "The link to the page",
+      table: {
+        type: { summary: "string" },
+      },
+    },
     children: {
       table: {
         disable: true,
@@ -31,6 +38,14 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     title: "Page",
+    children: <div>Page Content</div>,
+  },
+};
+
+export const WithLink: Story = {
+  args: {
+    title: "Page",
+    titleLink: "/",
     children: <div>Page Content</div>,
   },
 };
