@@ -6,7 +6,11 @@ import { Suspense } from "react";
 const BlogDetailPage = () => {
   return (
     <PageLayout title={"Blog"}>
-      <ErrorBoundaryWrapper>
+      <ErrorBoundaryWrapper
+        errorDisplayMessage={
+          "ブログの取得に失敗しました。\nしばらくしてからもう一度お試しください。"
+        }
+      >
         <Suspense fallback={<BlogDetailSkeleton />}>
           <BlogDetailContainer />
         </Suspense>
