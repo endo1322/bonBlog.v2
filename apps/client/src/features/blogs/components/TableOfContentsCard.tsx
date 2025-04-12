@@ -1,4 +1,4 @@
-import { Card } from "@/components/ui";
+import { AnchorLinkWrapper, Card } from "@/components/ui";
 import type { Headings } from "@/utils/markdown";
 import { cn } from "@bonblogv2/ui/lib/utils";
 
@@ -18,13 +18,13 @@ export const TableOfContentsCard = ({ className, headings = [] }: Props) => {
               case 1:
                 return (
                   <li key={heading.text} className="mt-2 font-bold">
-                    {heading.text}
+                    <AnchorLinkWrapper href={`#${heading.text}`}>{heading.text}</AnchorLinkWrapper>
                   </li>
                 );
               case 2:
                 return (
                   <li key={heading.text} className="mt-1 ml-2">
-                    {heading.text}
+                    <AnchorLinkWrapper href={`#${heading.text}`}>{heading.text}</AnchorLinkWrapper>
                   </li>
                 );
             }

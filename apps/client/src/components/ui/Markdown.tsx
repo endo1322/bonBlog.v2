@@ -1,10 +1,11 @@
+import { AnchorLinkWrapper } from "@/components/ui";
 import Markdown from "react-markdown";
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 const MdH1 = ({ children, ...props }: any) => {
   return (
-    <h2 className="mt-8 mb-4 border-b-2 pb-2 font-bold text-3xl" {...props}>
-      {children}
+    <h2 id={children} className="mt-8 mb-4 border-b-2 pb-2 font-bold text-3xl" {...props}>
+      <AnchorLinkWrapper href={`#${children}`}>{children}</AnchorLinkWrapper>
     </h2>
   );
 };
@@ -12,8 +13,8 @@ const MdH1 = ({ children, ...props }: any) => {
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 const MdH2 = ({ children, ...props }: any) => {
   return (
-    <h3 className="mt-4 mb-2 border-b pb-1 font-bold text-2xl" {...props}>
-      {children}
+    <h3 id={children} className="mt-4 mb-2 border-b pb-1 font-bold text-2xl" {...props}>
+      <AnchorLinkWrapper href={`#${children}`}>{children}</AnchorLinkWrapper>
     </h3>
   );
 };
