@@ -24,4 +24,28 @@ describe("markdownFormatter", () => {
     const expected = "- 項目1\n- 項目2";
     expect(markdownFormatter(input)).toBe(expected);
   });
+
+  test("複数の段落とリストが混在していても正しく整形される", () => {
+    const input = `
+タイトル
+これは空行を含まない文です
+
+これは空行を既に含む文です
+・項目1
+・項目2
+これは段落後の文です
+`;
+    const expected = `
+タイトル
+
+これは空行を含まない文です
+
+これは空行を既に含む文です
+- 項目1
+- 項目2
+
+これは段落後の文です
+`;
+    expect(markdownFormatter(input)).toBe(expected);
+  });
 });
