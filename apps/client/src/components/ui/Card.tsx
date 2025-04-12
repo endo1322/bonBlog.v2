@@ -4,7 +4,7 @@ type Props = {
   className?: string;
   children?: React.ReactNode;
   isPointer?: boolean;
-  as?: "div" | "article";
+  as?: "div" | "article" | "nav";
 };
 
 export const Card = ({ className, children, isPointer = true, as: CustomTag = "div" }: Props) => {

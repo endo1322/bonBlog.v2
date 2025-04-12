@@ -73,7 +73,7 @@ export const mockGetBlog200ResponseData: GetBlogResponseType = {
   - A code editor, such as Visual Studio Code
   - Basic understanding of JavaScript and React
   
-  ## Creating the Project
+  ## Creating the Project with React and TypeScript from Scratch
   
   Creating a project with React and TypeScript is simple and beginner-friendly. Most setups can be done in just a few commands.
   
