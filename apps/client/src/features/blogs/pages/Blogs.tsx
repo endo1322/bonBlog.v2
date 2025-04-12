@@ -1,6 +1,6 @@
 import { PageLayout } from "@/components/layouts";
 import { ErrorBoundaryWrapper } from "@/components/ui";
-import { BlogListContent, BlogListSkeleton } from "@/features/blogs/components";
+import { BlogListContainer, BlogListSkeleton } from "@/features/blogs/components";
 import { Suspense } from "react";
 
 const BlogsPage = () => {
@@ -12,7 +12,7 @@ const BlogsPage = () => {
         }
       >
         <Suspense fallback={<BlogListSkeleton />}>
-          <BlogListContent />
+          <BlogListContainer />
         </Suspense>
       </ErrorBoundaryWrapper>
     </PageLayout>
