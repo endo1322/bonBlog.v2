@@ -1,7 +1,7 @@
 import { queryDatabase } from "@server/apis/notion/database";
 import { getPageFullMdContent, retrievePage } from "@server/apis/notion/page";
-import { mdFormatter } from "@server/libs/md";
 import notionMiddleware from "@server/middlewares/notion";
+import { markdownFormatter } from "@server/utils/markdown";
 import { Hono } from "hono";
 
 const blogs = new Hono()
@@ -52,7 +52,7 @@ const blogs = new Hono()
           id: tag.id,
           name: tag.name,
         })) as { id: string; name: string }[],
-        content: mdFormatter(mdContent),
+        content: markdownFormatter(mdContent),
       });
     } catch (error) {
       console.error("Error fetching page:", error);
