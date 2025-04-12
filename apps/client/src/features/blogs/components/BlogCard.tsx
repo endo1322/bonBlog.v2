@@ -10,7 +10,7 @@ type Props = {
 
 export const BlogCard = ({ title, createdAt, tags }: Props) => {
   return (
-    <Card>
+    <Card className="h-full">
       <Timestamp className={"mb-2"} dateTime={createdAt} />
       <h2 className="mb-4 line-clamp-2 font-semibold text-gray-900 text-xl">{title}</h2>
       <div className="flex flex-wrap gap-2">
