@@ -4,7 +4,7 @@ import { getBlogDetailPath } from "@/utils/path";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Link } from "react-router";
 
-export const BlogListContent = () => {
+export const BlogListContainer = () => {
   const { data: blogs } = useSuspenseQuery(blogListQuery());
 
   return (

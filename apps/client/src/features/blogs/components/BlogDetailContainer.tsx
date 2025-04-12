@@ -4,7 +4,7 @@ import { blogDetailQuery } from "@/features/blogs/queries/blogDetail";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
 
-export const BlogDetailContent = () => {
+export const BlogDetailContainer = () => {
   const { id } = useParams();
   if (!id) return null;
   const { data: blog } = useSuspenseQuery(blogDetailQuery(id));

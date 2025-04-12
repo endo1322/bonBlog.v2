@@ -1,6 +1,6 @@
 export { BlogCard } from "./BlogCard";
-export { BlogListContent } from "./BlogListContent";
+export { BlogListContainer } from "./BlogListContainer";
 export { BlogListSkeleton } from "./BlogListSkeleton";
 export { Tag } from "./Tag";
 export { Timestamp } from "./Timestamp";
-export { BlogDetailContent } from "./BlogDetailContent";
+export { BlogDetailContainer } from "./BlogDetailContainer";
