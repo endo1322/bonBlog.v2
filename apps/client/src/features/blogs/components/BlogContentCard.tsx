@@ -3,6 +3,7 @@ import { Tag, Timestamp } from "@/features/blogs/components";
 import type { Tags } from "@/features/blogs/types/blog";
 
 type Props = {
+  className?: string;
   createdAt: string;
   updatedAt: string;
   title: string;
@@ -10,10 +11,17 @@ type Props = {
   tags: Tags;
 };
 
-export const BlogContentCard = ({ createdAt, updatedAt, title, content, tags }: Props) => {
+export const BlogContentCard = ({
+  className,
+  createdAt,
+  updatedAt,
+  title,
+  content,
+  tags,
+}: Props) => {
   return (
-    <Card as={"article"} isPointer={false}>
-      <header className=" mb-10">
+    <Card as={"article"} className={className} isPointer={false}>
+      <header className="mb-10">
         <div className="mb-4 flex gap-4">
           <Timestamp type={"created"} dateTime={createdAt} />
           <Timestamp type={"updated"} dateTime={updatedAt} />

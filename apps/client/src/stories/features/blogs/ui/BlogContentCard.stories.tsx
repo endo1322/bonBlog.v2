@@ -6,6 +6,11 @@ const meta = {
   title: "Features/Blogs/UI/BlogContentCard",
   component: BlogContentCard,
   argTypes: {
+    className: {
+      table: {
+        disable: true,
+      },
+    },
     title: {
       control: { type: "text" },
       description: "The title of the blog",

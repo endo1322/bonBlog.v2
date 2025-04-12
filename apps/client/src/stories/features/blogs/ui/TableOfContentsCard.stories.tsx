@@ -7,6 +7,11 @@ const meta = {
   title: "Features/Blogs/UI/TableOfContentsCard",
   component: TableOfContentsCard,
   argTypes: {
+    className: {
+      table: {
+        disable: true,
+      },
+    },
     headings: {
       control: { type: "object" },
       description: "The headings of the blog content",
