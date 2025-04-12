@@ -34,6 +34,7 @@ describe("markdownFormatter", () => {
 ・項目1
 ・項目2
 これは段落後の文です
+
 `;
     const expected = `
 タイトル
@@ -45,6 +46,7 @@ describe("markdownFormatter", () => {
 - 項目2
 
 これは段落後の文です
+
 `;
     expect(markdownFormatter(input)).toBe(expected);
   });
