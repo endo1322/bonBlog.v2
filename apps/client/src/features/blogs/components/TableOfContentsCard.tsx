@@ -27,6 +27,8 @@ export const TableOfContentsCard = ({ className, headings = [] }: Props) => {
                     <AnchorLinkWrapper href={`#${heading.text}`}>{heading.text}</AnchorLinkWrapper>
                   </li>
                 );
+              default:
+                return null;
             }
           })}
         </ul>
