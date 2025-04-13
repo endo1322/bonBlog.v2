@@ -22,7 +22,7 @@ function App() {
             <HelloContent />
           </Suspense>
         </ErrorBoundaryWrapper>
-        <Link className={buttonVariants({ variant: "outline" })} to={PATH.BLOGS}>
+        <Link className={buttonVariants({ variant: "outline" })} to={PATH.BLOG_LIST}>
           View All Blogs
         </Link>
         <p>

@@ -1,11 +1,11 @@
-import BlogsPage from "@/features/blogs/pages/Blogs";
+import BlogListPage from "@/features/blogs/pages/BlogList";
 import blogsHandlers from "@/mocks/handlers/blogs";
 import type { Meta, StoryObj } from "@storybook/react";
 import { withRouter } from "storybook-addon-remix-react-router";
 
 const meta = {
-  title: "Features/Blogs/Pages/BlogsPage",
-  component: BlogsPage,
+  title: "Features/Blogs/Pages/BlogListPage",
+  component: BlogListPage,
   parameters: {
     layout: "fullscreen",
     msw: {
@@ -13,7 +13,7 @@ const meta = {
     },
   },
   decorators: [withRouter],
-} satisfies Meta<typeof BlogsPage>;
+} satisfies Meta<typeof BlogListPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

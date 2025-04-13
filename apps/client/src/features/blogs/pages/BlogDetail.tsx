@@ -6,7 +6,7 @@ import { Suspense } from "react";
 
 const BlogDetailPage = () => {
   return (
-    <PageLayout title={"Blog"} titleLink={PATH.BLOGS}>
+    <PageLayout title={"Blog"} titleLink={PATH.BLOG_LIST}>
       <ErrorBoundaryWrapper
         errorDisplayMessage={
           "ブログの取得に失敗しました。\nしばらくしてからもう一度お試しください。"
