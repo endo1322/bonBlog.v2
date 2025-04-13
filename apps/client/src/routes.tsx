@@ -1,7 +1,8 @@
 import App from "@/App";
 import { RootLayout } from "@/components/layouts";
 import { PATH } from "@/constants/path";
-import BlogsPage from "@/features/blogs/pages/Blogs";
+import BlogDetailPage from "@/features/blogs/pages/BlogDetail";
+import BlogListPage from "@/features/blogs/pages/BlogList";
 import { createBrowserRouter } from "react-router";
 
 const router = createBrowserRouter([
@@ -9,7 +10,8 @@ const router = createBrowserRouter([
     Component: RootLayout,
     children: [
       { index: true, Component: App },
-      { path: PATH.BLOGS, Component: BlogsPage },
+      { path: PATH.BLOG_LIST, Component: BlogListPage },
+      { path: PATH.BLOG_DETAIL, Component: BlogDetailPage },
     ],
   },
 ]);

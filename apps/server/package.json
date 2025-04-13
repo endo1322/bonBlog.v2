@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@cloudflare/vitest-pool-workers": "0.8.0",
+    "@notion-md-converter/core": "0.9.0",
+    "@notion-md-converter/types": "0.9.0",
     "@notionhq/client": "2.3.0",
     "hono": "^4.7.2"
   },

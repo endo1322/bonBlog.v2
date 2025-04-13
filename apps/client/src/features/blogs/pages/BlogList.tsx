@@ -1,9 +1,9 @@
 import { PageLayout } from "@/components/layouts";
 import { ErrorBoundaryWrapper } from "@/components/ui";
-import { BlogListContent, BlogListSkeleton } from "@/features/blogs/components";
+import { BlogListContainer, BlogListSkeleton } from "@/features/blogs/components";
 import { Suspense } from "react";
 
-const BlogsPage = () => {
+const BlogListPage = () => {
   return (
     <PageLayout title={"Blog"}>
       <ErrorBoundaryWrapper
@@ -12,11 +12,11 @@ const BlogsPage = () => {
         }
       >
         <Suspense fallback={<BlogListSkeleton />}>
-          <BlogListContent />
+          <BlogListContainer />
         </Suspense>
       </ErrorBoundaryWrapper>
     </PageLayout>
   );
 };
 
-export default BlogsPage;
+export default BlogListPage;
