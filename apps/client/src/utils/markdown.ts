@@ -4,7 +4,7 @@ export type Headings = {
 }[];
 
 export const extractHeadings = (markdown: string): Headings => {
-  const regex = /^\s*(#{1,2})\s+(.+)/gm;
+  const regex = /^(?<!\\)\s*(#{1,2})\s+(.+)/gm;
   const matches = [];
   let match = regex.exec(markdown);
 
