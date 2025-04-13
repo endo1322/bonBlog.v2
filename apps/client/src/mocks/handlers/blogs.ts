@@ -15,4 +15,8 @@ export const mockGetBlogs500ErrorHandler = http.get(`${serverUrl}/blogs`, () =>
   HttpResponse.json(mockErrorResponseData, { status: 500 }),
 );
 
+export const mockGetBlog500ErrorHandler = http.get(`${serverUrl}/blogs/:id`, () =>
+  HttpResponse.json(mockErrorResponseData, { status: 500 }),
+);
+
 export default [mockGetBlogs200SuccessHandler, mockGetBlog200SuccessHandler];
