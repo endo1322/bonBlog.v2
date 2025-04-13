@@ -39,7 +39,7 @@ const BlogCardSkeleton = () => {
   );
 };
 
-const BlogContentTitlteSkeleton = ({ className }: Props) => {
+const BlogContentTitleSkeleton = ({ className }: Props) => {
   return <Skeleton className={cn("h-9", className)} />;
 };
 
@@ -51,7 +51,7 @@ const BlogContentCardSkeleton = ({ className }: Props) => {
           <TimestampSkeleton />
           <TimestampSkeleton />
         </div>
-        <BlogContentTitlteSkeleton className="mb-2" />
+        <BlogContentTitleSkeleton className="mb-2" />
         <div className="flex flex-wrap gap-2">
           {[...Array(3)].map((_, index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
