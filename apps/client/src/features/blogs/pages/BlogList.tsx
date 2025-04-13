@@ -3,7 +3,7 @@ import { ErrorBoundaryWrapper } from "@/components/ui";
 import { BlogListContainer, BlogListSkeleton } from "@/features/blogs/components";
 import { Suspense } from "react";
 
-const BlogsPage = () => {
+const BlogListPage = () => {
   return (
     <PageLayout title={"Blog"}>
       <ErrorBoundaryWrapper
@@ -19,4 +19,4 @@ const BlogsPage = () => {
   );
 };
 
-export default BlogsPage;
+export default BlogListPage;
