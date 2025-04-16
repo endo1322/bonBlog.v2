@@ -28,9 +28,4 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {
-    src: "../src/assets/profile.svg",
-    alt: "プロフィール画像",
-  },
-};
+export const Default: Story = {};
