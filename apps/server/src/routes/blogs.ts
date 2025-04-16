@@ -5,7 +5,8 @@ import { markdownFormatter } from "@server/utils/markdown";
 import { Hono } from "hono";
 
 const blogs = new Hono()
-  .get("/", notionMiddleware, async (c) => {
+  .use("*", notionMiddleware)
+  .get("/", async (c) => {
     try {
       c.set("notionDatabaseId", c.env.NOTION_DATABASE_ID);
       const res = await queryDatabase(c);
@@ -34,7 +35,7 @@ const blogs = new Hono()
       return c.json({ message: "Failed to fetch database" }, 500);
     }
   })
-  .get("/:id", notionMiddleware, async (c) => {
+  .get("/:id", async (c) => {
     try {
       c.set("notionPageId", c.req.param("id"));
       const [page, mdContent] = await Promise.all([
