@@ -5,3 +5,4 @@ export { Card } from "./Card";
 export { ErrorDisplay, ErrorBoundaryWrapper } from "./Error";
 export { MarkdownWrapper } from "./Markdown";
 export { AnchorLinkWrapper } from "./AnchorLink";
+export { CircleAvatar } from "./Avatar";
