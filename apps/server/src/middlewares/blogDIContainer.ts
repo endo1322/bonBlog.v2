@@ -1,4 +1,4 @@
-import { BlogUseCase } from "@server/application/usecases/BlogUsecase";
+import { BlogUseCase } from "@server/application/usecases/BlogUseCase";
 import { BlogRepository } from "@server/infrastructure/repositories/notion/BlogRepositoryImpl";
 import { createMiddleware } from "hono/factory";
 import type { NotionEnv } from "./notion";
