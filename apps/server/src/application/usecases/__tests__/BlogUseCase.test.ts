@@ -1,5 +1,5 @@
 import { GetAllBlogsDto, GetBlogDto } from "@server/application/dtos/blog";
-import { BlogUseCase } from "@server/application/usecases/BlogUseCase";
+import { BlogUseCase } from "@server/application/useCases/BlogUseCase";
 import type { IBlogRepository } from "@server/domain/repositories/IBlogRepository";
 import type { Mocked } from "vitest";
 
