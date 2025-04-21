@@ -1,9 +1,11 @@
+import { HttpError } from "@/apis/HttpError";
 import { AlertTriangle } from "@bonblogv2/ui/icons";
 import { ErrorBoundary } from "react-error-boundary";
+import { NotFoundPage } from "../pages/NotFound";
 
 type Props = {
   children: React.ReactNode;
-  fallback?: React.ReactNode;
+  Layout?: React.ComponentType<{ children: React.ReactNode }>;
   errorDisplayMessage?: string;
 };
 
@@ -18,9 +20,23 @@ export const ErrorDisplay = ({ message }: { message: string }) => {
 
 export const ErrorBoundaryWrapper = ({
   children,
-  fallback,
+  Layout = () => <>{children}</>,
   errorDisplayMessage = "エラーが発生しました。\nしばらくしてからもう一度お試しください。",
 }: Props) => {
-  const FallbackComponent = fallback || <ErrorDisplay message={errorDisplayMessage} />;
-  return <ErrorBoundary fallback={FallbackComponent}>{children}</ErrorBoundary>;
+  return (
+    <ErrorBoundary
+      fallbackRender={({ error }) => {
+        if (error instanceof HttpError && error.status === 404) {
+          return <NotFoundPage />;
+        }
+        return (
+          <Layout>
+            <ErrorDisplay message={errorDisplayMessage} />
+          </Layout>
+        );
+      }}
+    >
+      <Layout>{children}</Layout>
+    </ErrorBoundary>
+  );
 };
