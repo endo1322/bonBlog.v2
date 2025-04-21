@@ -1,4 +1,4 @@
-export const mockNotionPageResponse = {
+export const mockNotionRetrievePagesResponse = {
   object: "page",
   id: "59833787-2cf9-4fdf-8782-e53db20768a5",
   created_time: "2022-03-01T19:05:00.000Z",

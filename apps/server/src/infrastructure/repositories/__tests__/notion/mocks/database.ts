@@ -1,5 +1,4 @@
-// __tests__/mocks/notionDatabaseResponse.ts
-export const mockNotionDatabaseResponse = {
+export const mockNotionQueryDatabasesResponse = {
   object: "list",
   results: [
     {

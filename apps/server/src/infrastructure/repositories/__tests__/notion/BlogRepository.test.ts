@@ -1,7 +1,7 @@
 import { BlogDetail, BlogSummary } from "@server/domain/models/blog";
 import { BlogRepository } from "@server/infrastructure/repositories/notion/BlogRepositoryImpl";
-import { mockNotionDatabaseResponse } from "./mocks/notionDatabaseResponse";
-import { mockNotionPageResponse } from "./mocks/notionPageResponse";
+import { mockNotionQueryDatabasesResponse } from "./mocks/database";
+import { mockNotionRetrievePagesResponse } from "./mocks/page";
 
 vi.mock("@notion-md-converter/core", () => ({
   $getPageFullContent: vi.fn().mockResolvedValue("# テスト本文"),
@@ -13,10 +13,10 @@ vi.mock("@server/utils/markdown", () => ({
 
 const mockNotionClient = {
   databases: {
-    query: vi.fn().mockResolvedValue(mockNotionDatabaseResponse),
+    query: vi.fn().mockResolvedValue(mockNotionQueryDatabasesResponse),
   },
   pages: {
-    retrieve: vi.fn().mockResolvedValue(mockNotionPageResponse),
+    retrieve: vi.fn().mockResolvedValue(mockNotionRetrievePagesResponse),
   },
 };
 
