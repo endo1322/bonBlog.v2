@@ -2,11 +2,9 @@ import { $getPageFullContent, type NotionMarkdownConverter } from "@notion-md-co
 import type { Client } from "@notionhq/client";
 import { BlogDetail, BlogSummary, Tag } from "@server/domain/models/blog/";
 import type { IBlogRepository } from "@server/domain/repositories/IBlogRepository";
-import { markdownFormatter } from "@server/utils/markdown";
+import { NotionBaseRepository } from "@server/infrastructure/repositories/notion/NotionBaseRepository";
 
-export class BlogRepository implements IBlogRepository {
-  private notion: Client;
-  private notionMarkdownConverter: NotionMarkdownConverter;
+export class BlogRepository extends NotionBaseRepository implements IBlogRepository {
   private databaseId: string;
 
   public constructor(
@@ -14,8 +12,7 @@ export class BlogRepository implements IBlogRepository {
     notionMarkdownConverter: NotionMarkdownConverter,
     databaseId: string,
   ) {
-    this.notion = notion;
-    this.notionMarkdownConverter = notionMarkdownConverter;
+    super(notion, notionMarkdownConverter);
     this.databaseId = databaseId;
   }
 
@@ -58,7 +55,7 @@ export class BlogRepository implements IBlogRepository {
           name: tag.name,
         });
       }),
-      content: markdownFormatter(mdContent),
+      content: this.formatMarkdown(mdContent),
     });
   }
 }
