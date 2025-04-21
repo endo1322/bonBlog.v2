@@ -1,20 +1,14 @@
-import rpcClient, { type ExcludeErrorResponseType, isErrorType } from "@/apis";
+import rpcClient, { type ExcludeErrorResponseType, handleApiResponse } from "@/apis";
 import type { InferHonoType } from "@bonblogv2/server";
 
 export const getBlogs = async () => {
   const res = await rpcClient.blogs.$get();
-  if (res.status === 200) return await res.json();
-  const data = await res.json();
-  if (isErrorType(data)) throw new Error(data.message);
-  throw new Error("Unknown error");
+  return await handleApiResponse<GetBlogsResponseType>(res);
 };
 
 export const getBlog = async (id: string) => {
   const res = await rpcClient.blogs[":id"].$get({ param: { id: id } });
-  if (res.status === 200) return await res.json();
-  const data = await res.json();
-  if (isErrorType(data)) throw new Error(data.message);
-  throw new Error("Unknown error");
+  return await handleApiResponse<GetBlogResponseType>(res);
 };
 
 export type GetBlogsResponseType = ExcludeErrorResponseType<
