@@ -1,5 +1,5 @@
 import { env } from "cloudflare:test";
-import app from "@server/index";
+import { app } from "@server/routes";
 
 vi.mock("@notionhq/client", () => ({
   Client: vi.fn(),

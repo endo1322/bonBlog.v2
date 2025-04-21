@@ -1,5 +1,5 @@
 import rpcClient, { type ExcludeErrorResponseType, isErrorType } from "@/apis";
-import type { InferHonoType } from "@bonblogv2/server/src";
+import type { InferHonoType } from "@bonblogv2/server";
 
 export const getBlogs = async () => {
   const res = await rpcClient.blogs.$get();

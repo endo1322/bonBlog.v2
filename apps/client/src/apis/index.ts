@@ -1,5 +1,5 @@
 import { serverUrl } from "@/constants/env";
-import { type InferHonoType, createHonoClient } from "@bonblogv2/server/src";
+import { type InferHonoType, createHonoClient } from "@bonblogv2/server";
 
 export const rpcClient = createHonoClient(serverUrl);
 

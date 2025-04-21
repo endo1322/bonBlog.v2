@@ -5,8 +5,6 @@ import { createMiddleware } from "hono/factory";
 export type NotionEnv = {
   Variables: {
     notion: Client;
-    notionDatabaseId?: string;
-    notionPageId?: string;
     notionMarkdownConverter: NotionMarkdownConverter;
   };
   Bindings: {
