@@ -11,4 +11,8 @@ export class Tag {
     this.id = props.id;
     this.name = props.name;
   }
+
+  isUnPublished(): boolean {
+    return this.name === "test";
+  }
 }

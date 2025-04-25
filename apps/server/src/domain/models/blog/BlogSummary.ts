@@ -14,6 +14,7 @@ export class BlogSummary {
   readonly createdAt: string;
   readonly updatedAt: string;
   readonly tags: Tag[];
+  readonly unPublished: boolean;
 
   constructor(props: Props) {
     this.id = props.id;
@@ -21,5 +22,10 @@ export class BlogSummary {
     this.createdAt = props.createdAt;
     this.updatedAt = props.updatedAt;
     this.tags = props.tags;
+    this.unPublished = this.isUnPublished();
+  }
+
+  isUnPublished(): boolean {
+    return this.tags.some((tag) => tag.isUnPublished());
   }
 }
