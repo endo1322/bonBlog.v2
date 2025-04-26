@@ -10,7 +10,7 @@ export const VersionWarningDisplay = () => {
         <p>この投稿は旧バージョンのサイト用に書かれたものです。</p>
         <p>
           <Link
-            className="font-semibold hover:text-oarange-800 hover:underline"
+            className="font-semibold hover:text-orange-800 hover:underline"
             target="_blank"
             rel="noopener noreferrer"
             to={URL.V1}
