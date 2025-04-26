@@ -1,7 +1,7 @@
 import { $getPageFullContent, type NotionMarkdownConverter } from "@notion-md-converter/core";
 import type { Client } from "@notionhq/client";
 import { NotFoundError } from "@server/domain/errors/NotFoundError";
-import { BlogDetail, BlogSummary, Tag } from "@server/domain/models/blog/";
+import { BlogDetail, BlogSummary, TagList } from "@server/domain/models/blog/";
 import type { IBlogRepository } from "@server/domain/repositories/IBlogRepository";
 import { NotionBaseRepository } from "@server/infrastructure/repositories/notion/NotionBaseRepository";
 
@@ -27,13 +27,12 @@ export class BlogRepository extends NotionBaseRepository implements IBlogReposit
         title: result.properties.title.title[0].plain_text,
         createdAt: result.created_time,
         updatedAt: result.last_edited_time,
-        // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-        tags: result.properties.tag.multi_select.map((tag: any) => {
-          return new Tag({
-            id: tag.id,
-            name: tag.name,
-          });
-        }),
+        tagList: new TagList(
+          // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+          result.properties.tag.multi_select.map((tag: any) => {
+            return { id: tag.id, name: tag.name };
+          }),
+        ),
       });
     });
   }
@@ -50,13 +49,12 @@ export class BlogRepository extends NotionBaseRepository implements IBlogReposit
         title: response.properties.title.title[0].plain_text,
         createdAt: response.created_time,
         updatedAt: response.last_edited_time,
-        // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-        tags: response.properties.tag.multi_select.map((tag: any) => {
-          return new Tag({
-            id: tag.id,
-            name: tag.name,
-          });
-        }),
+        tagList: new TagList(
+          // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+          response.properties.tag.multi_select.map((tag: any) => {
+            return { id: tag.id, name: tag.name };
+          }),
+        ),
         content: this.formatMarkdown(mdContent),
       });
       // biome-ignore lint/suspicious/noExplicitAny: <explanation>

@@ -1,4 +1,5 @@
 import { GetAllBlogsDto, GetBlogDto } from "@server/application/dtos/blog";
+import { NotFoundError } from "@server/domain/errors/NotFoundError";
 import type { IBlogRepository } from "@server/domain/repositories/IBlogRepository";
 
 export class BlogUseCase {
@@ -10,11 +11,15 @@ export class BlogUseCase {
 
   async getAllBlogs(): Promise<GetAllBlogsDto> {
     const blogs = await this.blogRepository.findAllBlogs();
-    return new GetAllBlogsDto(blogs);
+    const publishedBlogs = blogs.filter((blog) => !blog.unPublished);
+    return new GetAllBlogsDto(publishedBlogs);
   }
 
   async getBlogById(id: string): Promise<GetBlogDto> {
     const blog = await this.blogRepository.findBlogById(id);
+    if (blog.unPublished) {
+      throw new NotFoundError(`Blog with id ${id} is unpublished`);
+    }
     return new GetBlogDto(blog);
   }
 }

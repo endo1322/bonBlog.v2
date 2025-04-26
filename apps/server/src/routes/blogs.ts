@@ -20,8 +20,10 @@ const blogs = new Hono()
       return c.json(result.blog);
     } catch (error) {
       if (error instanceof NotFoundError) {
+        console.error(`NotFoundError: ${error.message}`);
         throw new HTTPException(404, { message: `指定されたブログ（ID: ${id}）は存在しません。` });
       }
+      console.error(`Error: ${error}`);
       throw new HTTPException(500, { message: "予期せぬエラーが発生しました。" });
     }
   });
