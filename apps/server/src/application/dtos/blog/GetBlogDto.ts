@@ -1,4 +1,4 @@
-import type { BlogDetail } from "@server/domain/models/blog";
+import { type BlogDetail, TagRole } from "@server/domain/models/blog";
 import { BlogSummaryDto } from "./GetAllBlogsDto";
 
 export class GetBlogDto {
@@ -10,7 +10,10 @@ export class GetBlogDto {
       createdAt: props.createdAt,
       updatedAt: props.updatedAt,
       title: props.title,
-      tags: props.tagList.getTags().map((tag) => tag.toObject()),
+      tags: props.tagList
+        .getTags()
+        .filter((tag) => tag.getRole() === TagRole.Normal)
+        .map((tag) => tag.toObject()),
       content: props.content,
       version: props.version,
     });

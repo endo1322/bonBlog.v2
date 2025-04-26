@@ -1,4 +1,4 @@
-import type { BlogSummary } from "@server/domain/models/blog";
+import { type BlogSummary, TagRole } from "@server/domain/models/blog";
 
 export class GetAllBlogsDto {
   readonly blogs: BlogSummaryDto[];
@@ -9,7 +9,10 @@ export class GetAllBlogsDto {
         createdAt: blog.createdAt,
         updatedAt: blog.updatedAt,
         title: blog.title,
-        tags: blog.tagList.getTags().map((tag) => tag.toObject()),
+        tags: blog.tagList
+          .getTags()
+          .filter((tag) => tag.getRole() === TagRole.Normal)
+          .map((tag) => tag.toObject()),
       });
     });
   }
