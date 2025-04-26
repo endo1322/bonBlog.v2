@@ -7,7 +7,7 @@ export const VersionWarningDisplay = () => {
     <div className="mt-8 flex flex-col items-center justify-center gap-2 rounded-lg bg-orange-50 p-6 md:flex-row md:gap-8">
       <AlertTriangle className="h-12 w-12 text-orange-500" />
       <div className="text-center font-medium text-orange-700">
-        <p>この投稿は前バージョンのサイト用に書いた記事です。</p>
+        <p>この投稿は旧バージョンのサイト用に書かれたものです。</p>
         <p>
           <Link
             className="font-semibold hover:text-oarange-800 hover:underline"
@@ -17,7 +17,7 @@ export const VersionWarningDisplay = () => {
           >
             こちら
           </Link>
-          から前バージョンのサイトに移動できます。
+          から旧バージョンのサイトにアクセスできます。
         </p>
       </div>
     </div>
