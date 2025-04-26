@@ -1,5 +1,5 @@
 export enum TagRole {
-  UnPublished = "test",
+  UnPublished = "unpublished",
   VersionV1 = "v1",
   VersionV2 = "v2",
   Normal = "normal",
@@ -42,10 +42,6 @@ class Tag {
       name: this.name,
     };
   }
-
-  isUnPublished(): boolean {
-    return this.role === TagRole.UnPublished;
-  }
 }
 
 export class TagList {
@@ -60,7 +56,7 @@ export class TagList {
   }
 
   hasUnPublishedTag(): boolean {
-    return this.tags.some((tag) => tag.isUnPublished());
+    return this.tags.some((tag) => tag.getRole() === TagRole.UnPublished);
   }
 
   getVersion(): number {
