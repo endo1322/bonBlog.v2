@@ -13,6 +13,11 @@ const mockRepository: Mocked<IBlogRepository> = {
 
 const testUseCase = new BlogUseCase(mockRepository);
 
+vi.mock("@server/application/dtos/blog", () => ({
+  GetAllBlogsDto: vi.fn(),
+  GetBlogDto: vi.fn(),
+}));
+
 describe("BlogUseCase", () => {
   describe("getAllBlogs", () => {
     describe("success", () => {
@@ -25,15 +30,17 @@ describe("BlogUseCase", () => {
         expect(result).toBeInstanceOf(GetAllBlogsDto);
       });
 
-      it("blogが公開の時レスポンスに含み、非公開の時レスポンスに含まない", async () => {
+      it("blogが公開の時のみ、GetAllBlogsDtoの引数にblogが渡る", async () => {
         mockFindAllBlogs.mockResolvedValueOnce([
           { id: "unpublished-blog-id", unPublished: true },
           { id: "published-blog-id", unPublished: false },
         ]);
 
-        const result = await testUseCase.getAllBlogs();
+        await testUseCase.getAllBlogs();
 
-        expect(result.blogs).toStrictEqual([{ id: "published-blog-id" }]);
+        expect(GetAllBlogsDto).toHaveBeenCalledWith([
+          { id: "published-blog-id", unPublished: false },
+        ]);
       });
     });
   });
@@ -48,12 +55,12 @@ describe("BlogUseCase", () => {
         expect(mockRepository.findBlogById).toHaveBeenCalledWith(id);
         expect(result).toBeInstanceOf(GetBlogDto);
       });
-      it("blogが公開の時、レスポンスに含む", async () => {
+      it("blogが公開の時のみ、GetBlogDtoの引数にblogが渡る", async () => {
         mockFindBlogById.mockResolvedValueOnce({ id: "published-blog-id", unPublished: false });
 
-        const result = await testUseCase.getBlogById("published-blog-id");
+        await testUseCase.getBlogById("published-blog-id");
 
-        expect(result.blog).toStrictEqual({ id: "published-blog-id" });
+        expect(GetBlogDto).toHaveBeenCalledWith({ id: "published-blog-id", unPublished: false });
       });
     });
     describe("error", () => {

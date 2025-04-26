@@ -12,13 +12,7 @@ export class BlogUseCase {
   async getAllBlogs(): Promise<GetAllBlogsDto> {
     const blogs = await this.blogRepository.findAllBlogs();
     const publishedBlogs = blogs.filter((blog) => !blog.unPublished);
-    const getAllBlogsDto = new GetAllBlogsDto(
-      publishedBlogs.map((blog) => {
-        const { unPublished, ...rest } = blog;
-        return rest;
-      }),
-    );
-    return getAllBlogsDto;
+    return new GetAllBlogsDto(publishedBlogs);
   }
 
   async getBlogById(id: string): Promise<GetBlogDto> {
@@ -26,8 +20,6 @@ export class BlogUseCase {
     if (blog.unPublished) {
       throw new NotFoundError(`Blog with id ${id} is unpublished`);
     }
-    const { unPublished, ...rest } = blog;
-    const getBlogDto = new GetBlogDto(rest);
-    return getBlogDto;
+    return new GetBlogDto(blog);
   }
 }
