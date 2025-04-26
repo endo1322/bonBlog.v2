@@ -49,6 +49,7 @@ export const mockGetBlogs200ResponseData: GetBlogsResponseType = [
 
 export const mockGetBlog200ResponseData: GetBlogResponseType = {
   ...mockGetBlogs200ResponseData[0],
+  version: 2,
   content: `# Introduction
 
   React and TypeScript work well together to build modern, scalable web applications. TypeScript helps bring type safety and clarity to JavaScript, which is especially useful when building large-scale React applications. In this guide, we'll cover how to get started with this powerful combo.

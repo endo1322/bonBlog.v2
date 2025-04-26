@@ -18,6 +18,7 @@ export const BlogDetailContainer = () => {
         title={blog.title}
         content={blog.content}
         tags={blog.tags}
+        version={blog.version}
       />
       <TableOfContentsCard
         className="sticky top-4 hidden lg:block"

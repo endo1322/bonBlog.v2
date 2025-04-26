@@ -1,6 +1,7 @@
 import { BlogContentCard } from "@/features/blogs/components";
 import { mockGetBlog200ResponseData } from "@/mocks/data/blogs";
 import type { Meta, StoryObj } from "@storybook/react";
+import { withRouter } from "storybook-addon-remix-react-router";
 
 const meta = {
   title: "Features/Blogs/UI/BlogContentCard",
@@ -46,7 +47,15 @@ const meta = {
         type: { summary: "string" },
       },
     },
+    version: {
+      control: { type: "number" },
+      description: "The version of the blog site",
+      table: {
+        type: { summary: "number" },
+      },
+    },
   },
+  decorators: [withRouter],
 } satisfies Meta<typeof BlogContentCard>;
 
 export default meta;
@@ -54,4 +63,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: (({ id, ...rest }) => rest)(mockGetBlog200ResponseData),
+};
+
+export const Version1: Story = {
+  args: (({ id, version, ...rest }) => ({
+    ...rest,
+    version: 1,
+  }))(mockGetBlog200ResponseData),
 };
