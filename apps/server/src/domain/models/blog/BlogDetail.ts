@@ -1,18 +1,18 @@
-// domain/models/blog/BlogDetail.ts
 import { BlogSummary } from "./BlogSummary";
-import type { Tag } from "./Tag";
+import type { TagList } from "./Tag";
 
 type Props = {
   id: string;
   title: string;
   createdAt: string;
   updatedAt: string;
-  tags: Tag[];
+  tagList: TagList;
   content: string;
 };
 
 export class BlogDetail extends BlogSummary {
   readonly content: string;
+  readonly version: number;
 
   constructor(props: Props) {
     super({
@@ -20,8 +20,9 @@ export class BlogDetail extends BlogSummary {
       title: props.title,
       createdAt: props.createdAt,
       updatedAt: props.updatedAt,
-      tags: props.tags,
+      tagList: props.tagList,
     });
     this.content = props.content;
+    this.version = props.tagList.getVersion();
   }
 }

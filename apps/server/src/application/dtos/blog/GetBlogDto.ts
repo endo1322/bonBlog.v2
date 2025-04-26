@@ -7,6 +7,7 @@ type Props = {
   updatedAt: string;
   tags: { id: string; name: string }[];
   content: string;
+  version: number;
 };
 
 export class GetBlogDto {
@@ -15,6 +16,7 @@ export class GetBlogDto {
 
 class BlogDetailDto extends BlogSummaryDto {
   readonly content: string;
+  readonly version: number;
 
   constructor(props: Props) {
     super({
@@ -25,5 +27,6 @@ class BlogDetailDto extends BlogSummaryDto {
       tags: props.tags,
     });
     this.content = props.content;
+    this.version = props.version;
   }
 }

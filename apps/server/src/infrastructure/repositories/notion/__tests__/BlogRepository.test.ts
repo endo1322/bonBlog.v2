@@ -41,10 +41,12 @@ describe("BlogRepository", () => {
         {
           id: "59833787-2cf9-4fdf-8782-e53db20768a5",
           title: "テストタイトル",
-          tags: [
-            { id: "tag1", name: "テストタグ1" },
-            { id: "tag2", name: "テストタグ2" },
-          ],
+          tagList: {
+            tags: [
+              { id: "tag1", name: "テストタグ1" },
+              { id: "tag2", name: "テストタグ2" },
+            ],
+          },
           createdAt: "2022-03-01T19:05:00.000Z",
           updatedAt: "2022-07-06T20:25:00.000Z",
         },
@@ -60,10 +62,12 @@ describe("BlogRepository", () => {
       expect(result).toMatchObject({
         id: "59833787-2cf9-4fdf-8782-e53db20768a5",
         title: "テストタイトル",
-        tags: [
-          { id: "tag1", name: "テストタグ1" },
-          { id: "tag2", name: "テストタグ2" },
-        ],
+        tagList: {
+          tags: [
+            { id: "tag1", name: "テストタグ1" },
+            { id: "tag2", name: "テストタグ2" },
+          ],
+        },
         createdAt: "2022-03-01T19:05:00.000Z",
         updatedAt: "2022-07-06T20:25:00.000Z",
         content: "# テスト本文",
