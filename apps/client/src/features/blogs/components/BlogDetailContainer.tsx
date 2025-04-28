@@ -14,7 +14,7 @@ export const BlogDetailContainer = () => {
     <div className="flex gap-4">
       <Meta
         title={blog.title}
-        auther="bondroid1322"
+        author="bondroid1322"
         keywords={blog.tags.map((tag) => tag.name).join(", ")}
       />
       <BlogContentCard
