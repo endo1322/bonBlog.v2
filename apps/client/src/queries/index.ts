@@ -1,7 +1,5 @@
-import { getIndex } from "@/apis";
 import { HttpError } from "@/apis/HttpError";
-import { QUERY_KEY } from "@/constants/queryKey";
-import { QueryClient, queryOptions } from "@tanstack/react-query";
+import { QueryClient } from "@tanstack/react-query";
 
 const RETRY_COUNT = 3;
 
@@ -19,9 +17,3 @@ export const queryClient = new QueryClient({
     },
   },
 });
-
-export const helloQuery = () =>
-  queryOptions({
-    queryKey: QUERY_KEY.HELLO,
-    queryFn: () => getIndex(),
-  });

@@ -14,11 +14,6 @@ export const handleApiResponse = async <T>(response: Response): Promise<T> => {
   return data;
 };
 
-export const getIndex = async () => {
-  const res = await rpcClient.index.$get();
-  return await handleApiResponse<GetIndexResponseType>(res);
-};
-
 export type GetIndexResponseType = InferHonoType<typeof rpcClient.index.$get>;
 
 export type ErrorResponseType = { message: string };
