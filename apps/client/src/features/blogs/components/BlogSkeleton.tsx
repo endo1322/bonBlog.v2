@@ -15,7 +15,6 @@ const BlogTitleSkeleton = ({ className }: Props) => {
   return (
     <div className={cn("flex flex-col gap-2", className)}>
       <Skeleton className="h-6" />
-      <Skeleton className="h-6" />
     </div>
   );
 };
@@ -93,7 +92,7 @@ const TableOfContentsCardSkeleton = ({ className }: Props) => {
 
 export const BlogListSkeleton = () => {
   return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-6">
       {[...Array(12)].map((_, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
         <BlogCardSkeleton key={index} />

@@ -6,7 +6,12 @@ import { Suspense } from "react";
 
 const BlogDetailPageLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <PageLayout title="Blog" titleLink={PATH.BLOG_LIST}>
+    <PageLayout
+      title="Blog"
+      titleLink={PATH.BLOG_LIST}
+      toBackPath={PATH.BLOG_LIST}
+      backButtonLabel="ブログ一覧に戻る"
+    >
       {children}
     </PageLayout>
   );
