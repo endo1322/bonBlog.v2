@@ -17,7 +17,7 @@ export const NotFoundPage = () => {
           </div>
         </div>
       </div>
-      <Link className={buttonVariants({ variant: "outline" })} to={PATH.HOME}>
+      <Link className={buttonVariants({ variant: "outline" })} to={PATH.ROOT}>
         トップに戻る
       </Link>
     </div>
