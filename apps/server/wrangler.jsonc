@@ -15,7 +15,7 @@
       "kv_namespaces": [
         {
           "binding": "CACHE",
-          "id": "${CACHE_ID}"
+          "id": "0dd180a3a56f4270beed067f36ffaecc"
         }
       ]
     },
@@ -27,7 +27,7 @@
       "kv_namespaces": [
         {
           "binding": "CACHE",
-          "id": "${CACHE_PREVIEW_ID}"
+          "id": "b65add5fb26e482fabe17f6ca571aaa4"
         }
       ]
     },
