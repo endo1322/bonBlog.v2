@@ -28,6 +28,20 @@ const meta = {
         disable: true,
       },
     },
+    toBackPath: {
+      control: { type: "text" },
+      description: "The link to the back page",
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    backButtonLabel: {
+      control: { type: "text" },
+      description: "The label of the back button",
+      table: {
+        type: { summary: "string" },
+      },
+    },
   },
   decorators: [withRouter],
 } satisfies Meta<typeof PageLayout>;
@@ -46,6 +60,14 @@ export const WithLink: Story = {
   args: {
     title: "Page",
     titleLink: "/",
+    children: <div>Page Content</div>,
+  },
+};
+
+export const WithBackButton: Story = {
+  args: {
+    title: "Page",
+    toBackPath: "/",
     children: <div>Page Content</div>,
   },
 };

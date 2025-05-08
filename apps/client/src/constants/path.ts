@@ -1,5 +1,6 @@
 export const PATH = {
-  HOME: "/",
+  ROOT: "/",
+  NOT_FOUND: "*",
   BLOG_LIST: "/blogs",
   BLOG_DETAIL: "/blogs/:id",
 };

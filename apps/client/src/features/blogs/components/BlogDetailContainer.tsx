@@ -1,3 +1,4 @@
+import { Meta } from "@/components/meta";
 import { BlogContentCard, TableOfContentsCard } from "@/features/blogs/components";
 import { blogDetailQuery } from "@/features/blogs/queries/blogDetail";
 import { extractHeadings } from "@/utils/markdown";
@@ -11,6 +12,11 @@ export const BlogDetailContainer = () => {
 
   return (
     <div className="flex gap-4">
+      <Meta
+        title={blog.title}
+        author="bondroid1322"
+        keywords={blog.tags.map((tag) => tag.name).join(", ")}
+      />
       <BlogContentCard
         className="w-full"
         createdAt={blog.createdAt}
@@ -18,6 +24,7 @@ export const BlogDetailContainer = () => {
         title={blog.title}
         content={blog.content}
         tags={blog.tags}
+        version={blog.version}
       />
       <TableOfContentsCard
         className="sticky top-4 hidden lg:block"

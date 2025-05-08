@@ -1,5 +1,5 @@
 import { Card, MarkdownWrapper } from "@/components/ui";
-import { Tag, Timestamp } from "@/features/blogs/components";
+import { Tag, Timestamp, VersionWarningDisplay } from "@/features/blogs/components";
 import type { Tags } from "@/features/blogs/types/blog";
 
 type Props = {
@@ -9,6 +9,7 @@ type Props = {
   title: string;
   content: string;
   tags: Tags;
+  version: number;
 };
 
 export const BlogContentCard = ({
@@ -18,6 +19,7 @@ export const BlogContentCard = ({
   title,
   content,
   tags,
+  version,
 }: Props) => {
   return (
     <Card as={"article"} className={className} isPointer={false}>
@@ -32,6 +34,7 @@ export const BlogContentCard = ({
             <Tag key={tag.id} label={tag.name} />
           ))}
         </div>
+        {version === 1 && <VersionWarningDisplay />}
       </header>
       <div>
         <MarkdownWrapper markdown={content} />

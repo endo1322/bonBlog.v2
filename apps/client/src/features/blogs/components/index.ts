@@ -6,3 +6,4 @@ export { Timestamp } from "./Timestamp";
 export { BlogDetailContainer } from "./BlogDetailContainer";
 export { BlogContentCard } from "./BlogContentCard";
 export { TableOfContentsCard } from "./TableOfContentsCard";
+export { VersionWarningDisplay } from "./VersionWarningDisplay";

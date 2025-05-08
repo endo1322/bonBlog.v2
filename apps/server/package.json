@@ -20,5 +20,8 @@
     "@cloudflare/workers-types": "^4.20250214.0",
     "cloudflare": "4.1.0",
     "wrangler": "^3.109.2"
+  },
+  "exports": {
+    ".": "./src/client.ts"
   }
 }
