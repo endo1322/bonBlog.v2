@@ -1,4 +1,4 @@
-import corsMiddleware from "@server/middlewares/cors";
+import { corsMiddleware } from "@server/middlewares";
 import { Hono } from "hono";
 import { HTTPException } from "hono/http-exception";
 import blogs from "./blogs";

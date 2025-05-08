@@ -16,7 +16,7 @@ const generateCacheKey = (path: string, params: Record<string, string>): string 
   return `${path}${sortedParams ? `?${sortedParams}` : ""}`;
 };
 
-const cacheMiddleware = createMiddleware<CacheEnv>(async (c, next) => {
+export const cacheMiddleware = createMiddleware<CacheEnv>(async (c, next) => {
   const cacheKey = generateCacheKey(c.req.path, c.req.query());
   const cachedResponse = await c.env.CACHE.get(cacheKey);
 
@@ -35,5 +35,3 @@ const cacheMiddleware = createMiddleware<CacheEnv>(async (c, next) => {
     return c.json(JSON.parse(responseBody));
   }
 });
-
-export default cacheMiddleware;

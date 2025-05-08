@@ -8,7 +8,7 @@ type Bindings = {
   };
 };
 
-const corsMiddleware = createMiddleware<Bindings>(async (c, next) => {
+export const corsMiddleware = createMiddleware<Bindings>(async (c, next) => {
   return cors({
     origin:
       c.env.CF_CLIENT_DOMAIN !== ""
@@ -18,5 +18,3 @@ const corsMiddleware = createMiddleware<Bindings>(async (c, next) => {
         : c.env.CLIENT_URLS,
   })(c, next);
 });
-
-export default corsMiddleware;

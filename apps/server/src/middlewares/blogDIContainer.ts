@@ -10,7 +10,7 @@ type DIVariables = {
   };
 } & NotionEnv;
 
-const BlogDIContainer = createMiddleware<DIVariables>(async (c, next) => {
+export const blogDIContainer = createMiddleware<DIVariables>(async (c, next) => {
   const notion = c.get("notion");
   const notionMarkdownConverter = c.get("notionMarkdownConverter");
   const databaseId = c.env.NOTION_DATABASE_ID;
@@ -22,5 +22,3 @@ const BlogDIContainer = createMiddleware<DIVariables>(async (c, next) => {
   c.set("blogUseCase", blogUseCase);
   await next();
 });
-
-export default BlogDIContainer;
